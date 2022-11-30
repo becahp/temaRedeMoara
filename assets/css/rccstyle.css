@@ -1,0 +1,303 @@
+.linkTitulo {
+    text-decoration: none;
+    color: black;
+}
+
+.linkTitulo:hover {
+    text-decoration: none;
+    color: #1351b4;
+}
+
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li.active {
+    background-color: #0c326f !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li i {
+    color: #0c326f;
+}
+
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li:after {
+    border-top-color: #0c326f !important;
+}
+
+.eael-adv-accordion .eael-accordion-list .eael-accordion-header.active {
+    background-color: #0c326f !important;
+}
+
+.elementor-12602 .elementor-element.elementor-element-dfa7abd .eael-adv-accordion .eael-accordion-list .eael-accordion-header .fa-toggle {
+    color: #0c326f !important;
+}
+
+.elementor-12602 .elementor-element.elementor-element-dfa7abd .eael-adv-accordion .eael-accordion-list .eael-accordion-header .fa-accordion-icon {
+    color: #0c326f !important;
+}
+
+.eael-adv-accordion .eael-accordion-list .eael-accordion-header:hover {
+    background-color: #0c326f !important;
+}
+
+.eael-advance-tabs .eael-tabs-nav>ul li:hover,
+.eael-advance-tabs .eael-tabs-nav>ul li:hover {
+    background-color: #0c326f !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-cb00342:not(.elementor-motion-effects-element-type-background),
+.elementor-8754 .elementor-element.elementor-element-cb00342>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+    background-color: #ededed !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-d6fa19e .elementor-heading-title {
+    color: #333 !important;
+    text-shadow: none !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-2cfb029 {
+    color: #333 !important;
+    font-weight: 400 !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-d9771dc .elementor-heading-title {
+    color: #333 !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-202d0e0 .elementor-heading-title {
+    color: #333 !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-0751a83 {
+    color: #333 !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-809c256 .elementor-heading-title {
+    color: #333 !important;
+}
+
+.elementor-8754 .elementor-element.elementor-element-1858851 {
+    color: #333 !important;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+
+/*Classes para os posts*/
+
+.titulo-post {
+    font-family: Rawline;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 50px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #1351B4;
+    margin-top: 48px;
+    margin-bottom: 20px;
+}
+
+.posted-rcc {
+    font-family: Rawline;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #555555;
+}
+
+.container-rcc-post {
+    width: 60%;
+}
+
+.social-media-rcc {
+    display: flex;
+    justify-content: end;
+}
+
+.entry-content-rcc {
+    margin-top: 40px;
+    font-family: Rawline;
+    font-style: normal;
+    font-weight: normal;
+    color: #555555;
+}
+
+.entry-content-rcc p {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.entry-content-rcc a {
+    font-size: 14px;
+    line-height: 32px;
+    color: #1351B4;
+}
+
+.cat-links-rcc {
+    font-family: Rawline;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+}
+
+.tag-links-rcc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tag-links-rcc a {
+    background: #EDEDED;
+    padding: 10px;
+    margin-right: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    align-items: center;
+}
+
+.tag-links-rcc a:hover {
+    background: #CECCCC;
+}
+
+
+/*Classes para os archives*/
+
+.archive-rcc {
+    padding-bottom: 15px;
+}
+
+.archive-rcc img {
+    border-radius: 4px;
+}
+
+.archive-rcc h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #1351B4;
+}
+
+.archive-rcc p {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.archive-rcc a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #1351B4;
+}
+
+.visao-texto {
+    align-items: baseline;
+    display: flex;
+}
+
+.visao-texto p {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    margin-right: 10px;
+}
+
+
+/*CSS para mostrar o tolltip das redes*/
+
+
+/*
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: #555;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 15px 20px 15px 20px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 115%;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 3%;
+    right: 100%;
+    margin-left: -50px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+*/
+
+.texto-hover {
+    background: white;
+    /*color: white;*/
+    top: 27%;
+    right: 5%;
+    left: 45%;
+    position: absolute;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: #1351B4;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 20px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #555;
+    visibility: hidden;
+}
+
+.titulo-hover {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #000000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.br-accordion .titulo-redes {
+    font-size: 18px;
+}
+
+.br-accordion .subtitulo-redes {
+    color: #1351b4;
+    font-size: 16px;
+}
+
+.br-accordion .conteudo-redes {
+    padding-left: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.br-accordion .conteudo-redes a {
+    color: black;
+    border-bottom: 1px dotted black;
+}
