@@ -287,7 +287,6 @@
             </div>
             <div class="col assigns text-right">
               <a href="http://www.acessoainformacao.gov.br/"><img class="ml-4" src="<?php echo(esc_url( get_template_directory_uri() ) . '/assets/images/logo-acesso-footer.svg')?>" alt="Imagem" /></a>
-              <a href="http://www.brasil.gov.br/"><img class="ml-4" src="<?php echo(esc_url( get_template_directory_uri() ) . '/assets/images/logo-governo-federal.svg')?>" alt="Imagem" /></a>
             </div>
           </div>
         </div>

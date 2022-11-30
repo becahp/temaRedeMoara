@@ -756,13 +756,23 @@ function dsgov_breadcrumb_redes($params) {
 function thumbnail_post() {
 	add_image_size('thumbnail_post', 1200, 400, true);
 }
-add_action('after_setup_theme', 'thumbnail_post');
+//add_action('after_setup_theme', 'thumbnail_post');
 
 
 function thumbnail_blog() {
 	add_image_size('thumbnail_blog', 253, 158, true);
 }
-add_action('after_setup_theme', 'thumbnail_blog');
+//add_action('after_setup_theme', 'thumbnail_blog');
+
+function thumbnail_redes() {
+	add_image_size('thumbnail_redes', 300, 300, true);
+}
+add_action('after_setup_theme', 'thumbnail_redes');
+
+function thumbnail_redes_retangular() {
+	add_image_size('thumbnail_redes_retangular', 450, 250, true);
+}
+add_action('after_setup_theme', 'thumbnail_redes_retangular');
 
 /*  
  * -- Funções para template do post --
@@ -928,6 +938,11 @@ function gerar_redes_principal($r_type, $r_tax)
 			</button>
 		</div>
 		<div class="content conteudo-redes" id="id<?php echo $i; ?>">
+
+			<?php if (strlen(category_description( $categoria_id )) > 1 ) {?>
+				<span class="ajuda-redes"><i class="fas fa-info-circle" aria-hidden="true"></i> <?php echo category_description( $categoria_id ); ?> </span>
+			<?php } ?>
+			
 			<?php
 
 			$filhos_args = array(
@@ -997,3 +1012,64 @@ function chama_shortcode_redes($params) {
 
 #Ex: [shortcode_redes rede_slug="rede-de-suporte" categoria_slug="suporte_categoria"] 
 add_shortcode('shortcode_redes', 'chama_shortcode_redes');
+
+/* Função para mostrar os posts das redes em categorias e tags */
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+    $post_type = get_query_var('post_type');
+    if($post_type) {
+        $post_type = $post_type;
+	}
+    else {
+        $post_type = array('post','rede-0','rede-1','rede-2','rede-3','rede-5','rede-6','rede-7','rede-8'); // replace cpt to your custom post type
+	}
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}
+
+function getNameRede($slugRede){
+	switch($slugRede){
+		case "rede-de-formacao":
+			return "Rede de Formação Tecnológica";
+		case "rede-de-inovacao":
+			return "Rede de Inovação";
+		case "rede-de-pesquisa":
+			return "Rede de Pesquisa Aplicada";
+		case "rede-de-produto":
+			return "Rede de Tecnologias Aplicadas";
+		case "rede-de-suporte":
+			return "Rede de Suporte";
+	}
+}
+
+function getCategoryNameRede($slugRede){
+	switch($slugRede){
+		case "rede-de-formacao":
+			return "formacao_categoria";
+		case "rede-de-inovacao":
+			return "inovacao_categoria";
+		case "rede-de-pesquisa":
+			return "pesquisa_categoria";
+		case "rede-de-produto":
+			return "produto_categoria";
+		case "rede-de-suporte":
+			return "suporte_categoria_nova";
+	}
+}
+
+
+// desativar verificação do certificado do email
+// https://gist.github.com/slaFFik/c1d7d4249f47da7195fb973109952090
+add_filter('wp_mail_smtp_custom_options', function( $phpmailer ) {
+	$phpmailer->SMTPOptions = array(
+		'ssl' => array(
+			'verify_peer'       => false,
+			'verify_peer_name'  => false,
+			'allow_self_signed' => true
+		)
+	);
+
+	return $phpmailer;
+} );
