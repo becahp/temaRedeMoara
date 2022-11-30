@@ -1022,7 +1022,7 @@ function query_post_type($query) {
         $post_type = $post_type;
 	}
     else {
-        $post_type = array('post','rede-0','rede-1','rede-2','rede-3','rede-5','rede-6','rede-7','rede-8'); // replace cpt to your custom post type
+        $post_type = array('post','rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'); // replace cpt to your custom post type
 	}
     $query->set('post_type',$post_type);
     return $query;
@@ -1031,16 +1031,22 @@ function query_post_type($query) {
 
 function getNameRede($slugRede){
 	switch($slugRede){
-		case "rede-de-formacao":
-			return "Rede de Formação Tecnológica";
-		case "rede-de-inovacao":
-			return "Rede de Inovação";
-		case "rede-de-pesquisa":
-			return "Rede de Pesquisa Aplicada";
-		case "rede-de-produto":
-			return "Rede de Tecnologias Aplicadas";
-		case "rede-de-suporte":
-			return "Rede de Suporte";
+		case "rede-1":
+			return "Ciências Agrárias";
+		case "rede-2":
+			return "Ciências Biológicas";
+		case "rede-3":
+			return "Ciências da Saúde";
+		case "rede-4":
+			return "Ciências Exatas e da Terra";
+		case "rede-5":
+			return "Engenharias";
+		case "rede-6":
+			return "Ciências Humanass";
+		case "rede-7":
+			return "Ciências Sociais Aplicadas";
+		case "rede-8":
+			return "Lingüística, Letras e Artes";
 	}
 }
 

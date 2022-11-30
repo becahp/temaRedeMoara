@@ -16,7 +16,7 @@ while ( have_posts() ) :
 	the_post();
 	
 	$rede_slug = "rede-de-produto";
-	$rede_name = "Rede de Produto";
+	$rede_name = nome_da_rede($rede_slug);
 	$categoria_rede = "produto_categoria";
 
 	/* Pegar a taxonomia do post

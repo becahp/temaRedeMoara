@@ -17,10 +17,11 @@ $description = get_the_archive_description();
 <?php if ( have_posts() ) : ?>
 
 	<?php
-		$rede_slug = "rede-de-inovacao";
-		$rede_name = nome_da_rede($rede_slug);
-		$categoria_rede = "inovacao_categoria";
-	
+
+		$rede_slug = "rede-4";
+		$rede_name = getNameRede($rede_slug);
+		$categoria_rede = "rede_4_categoria";
+
 		echo "<div class=\"container-lg d-block\">";
 			echo "<div class=\"breadcrumb-post\" style=\"margin-left: -24px;\">";
 				echo do_shortcode('[shortcode_breadcrumb_redes rede_slug="'.$rede_slug.'" rede_name="'.$rede_name.'" categoria_slug="'.$term_slug.'" categoria_name="'.$terms_string.'" categoria_rede="'.$categoria_rede.'" type="archive"]');

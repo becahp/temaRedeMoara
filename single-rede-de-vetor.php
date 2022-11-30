@@ -16,7 +16,7 @@ while ( have_posts() ) :
 	the_post();
 	
 	$rede_slug = "rede-de-vetor";
-	$rede_name = "Rede de Vetores";
+	$rede_name = nome_da_rede($rede_slug);
 	$categoria_rede = "vetor_categoria";
 
 	/* Pegar a taxonomia do post
