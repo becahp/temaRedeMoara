@@ -109,7 +109,7 @@ add_action('init', 'cptui_register_my_taxes');
 function meus_shortcodes($atts, $content = null, $nome_slug)
 {
     $nome_slug_categoria = str_replace("-", "_", $nome_slug) . '_categoria';
-    gerar_redes_principal($nome_slug, $nome_slug_categoria);
+    gerar_redes_moara($nome_slug, $nome_slug_categoria);
 };
 
 for ($i = 1; $i < 9; $i++) {

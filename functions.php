@@ -878,6 +878,7 @@ function meu_arrr_custom_loop($r_type = 'post', $r_post_num, $r_tax = 'category'
 				'terms' => array(
 					$r_terms
 				),
+				'include_children' => false,
 			)
 		)
 	);
@@ -897,7 +898,7 @@ function meu_arrr_custom_loop($r_type = 'post', $r_post_num, $r_tax = 'category'
 		}
 		echo '</ol>';
 	} else {
-		// no posts found
+		//echo '<br>no posts found';
 	}
 	/* Restore original Post Data */
 	wp_reset_postdata();
@@ -1082,3 +1083,4 @@ add_filter('wp_mail_smtp_custom_options', function( $phpmailer ) {
 
 
 include 'criar_redes.php';
+include 'functions-rede-moara.php';
