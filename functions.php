@@ -889,7 +889,7 @@ function meu_arrr_custom_loop($r_type = 'post', $r_post_num, $r_tax = 'category'
 			echo '<li>';
 			$the_query->the_post();
 			?>
-			<div onmouseover="mouseOver(this);" onmouseout="mouseOut();"><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
+			<div onmouseover="mouseOver(this);" onmouseout="mouseOut();"><a href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a>
   				<span class='d-none'><?php echo wp_trim_words(get_field('texto_hover'), 120) ?></span>
 			</div>
 			<?php
@@ -982,25 +982,25 @@ function gerar_redes_principal($r_type, $r_tax)
 /**
  * Shortcode das redes, criados com função anônima
  */
-add_shortcode('shortcode_redes_suporte', function () {
-	gerar_redes_principal('rede-de-suporte', 'suporte_categoria_nova');
-});
+// add_shortcode('shortcode_redes_suporte', function () {
+// 	gerar_redes_principal('rede-de-suporte', 'suporte_categoria_nova');
+// });
 
-add_shortcode('shortcode_redes_pesquisa', function () {
-	gerar_redes_principal('rede-de-pesquisa', 'pesquisa_categoria');
-});
+// add_shortcode('shortcode_redes_pesquisa', function () {
+// 	gerar_redes_principal('rede-de-pesquisa', 'pesquisa_categoria');
+// });
 
-add_shortcode('shortcode_redes_formacao', function () {
-	gerar_redes_principal('rede-de-formacao', 'formacao_categoria');
-});
+// add_shortcode('shortcode_redes_formacao', function () {
+// 	gerar_redes_principal('rede-de-formacao', 'formacao_categoria');
+// });
 
-add_shortcode('shortcode_redes_inovacao', function () {
-	gerar_redes_principal('rede-de-inovacao', 'inovacao_categoria');
-});
+// add_shortcode('shortcode_redes_inovacao', function () {
+// 	gerar_redes_principal('rede-de-inovacao', 'inovacao_categoria');
+// });
 
-add_shortcode('shortcode_redes_produto', function () {
-	gerar_redes_principal('rede-de-produto', 'produto_categoria');
-});
+// add_shortcode('shortcode_redes_produto', function () {
+// 	gerar_redes_principal('rede-de-produto', 'produto_categoria');
+// });
 
 function chama_shortcode_redes($params) {
 	$var = shortcode_atts([
@@ -1079,3 +1079,6 @@ add_filter('wp_mail_smtp_custom_options', function( $phpmailer ) {
 
 	return $phpmailer;
 } );
+
+
+include 'criar_redes.php';
