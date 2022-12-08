@@ -430,6 +430,9 @@ function twenty_twenty_one_scripts() {
 	wp_register_style( 'rccstyle-class', get_template_directory_uri() . '/assets/css/rccstyle.css', false, $ver );
 	wp_enqueue_style ( 'rccstyle-class' );
 
+	wp_register_style( 'rede-moara-class', get_template_directory_uri() . '/assets/css/rede-moara-style.css', false, $ver );
+	wp_enqueue_style ( 'rede-moara-class' );
+
 	wp_enqueue_script( 'dsgov-js', get_template_directory_uri() . '/assets/js/dsgov.js' , array('jquery'), $ver, true);
 	wp_enqueue_script( 'geral-js', get_template_directory_uri() . '/assets/js/geral.js' , array('jquery'), $ver);
 	wp_enqueue_script( 'geral-footer-js', get_template_directory_uri() . '/assets/js/geral-footer.js' , array('jquery'), $ver, true);
