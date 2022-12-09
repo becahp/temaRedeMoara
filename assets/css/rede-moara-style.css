@@ -1,27 +1,78 @@
-
-/* Novo acordeon */
+/* Novo accordion */
 /* https://codyhouse.co/gem/css-multi-level-accordion-menu */
+
+/* esconder checkbox nativa */
 .cd-accordion__input {
-    /* hide native checkbox */
     position: absolute;
     opacity: 0;
 }
 
+/* centralizar a label com o ícone */
 .cd-accordion__label {
     position: relative;
     display: flex;
     align-items: center;
-    padding: var(--space-sm) var(--space-md);
+    /* comentei esses aqui pq não fazem nada no nosso sistema */
+    /* padding: var(--space-sm) var(--space-md);
     background: var(--cd-color-1);
     box-shadow: inset 0 -1px lightness(var(--cd-color-1), 1.2);
-    color: var(--color-white);
+    color: var(--color-white); */
 }
 
+/*  por padrão, os filhos começam escondidos */
 .cd-accordion__sub {
-    display: none; /* by default hide all sub menus */
+    display: none;
 }
 
+/* mostrar os filhos quando o checkbox é clicado */
 .cd-accordion__input:checked~.cd-accordion__sub {
-    /* show children when item is checked */
-    display: block !important;
+    display: block;
+}
+
+/* 
+*                   Minhas classes 
+*/
+
+/* Melhor padding e margin do primeiro ul*/
+.primeiro-ul {
+    padding: 0px;
+    margin: 0;
+}
+
+/* Adiciona borda aos primeiros li*/
+.primeiro-li {
+    border-bottom: 1px solid grey;
+}
+
+/* Remove o pontinho de ul e li */
+.accordion-moara ul,
+li {
+    list-style-type: none;
+}
+
+/* Adiciona o cursor ao label e melhora padding */
+.accordion-moara label {
+    cursor: pointer;
+    padding-block: 10px;
+}
+
+/* Adiciona cor ao hover do label */
+.accordion-moara label:hover {
+    background-color: lightblue;
+}
+
+/* Melhora o padding do item final */
+.item-moara {
+    padding-bottom: 10px;
+}
+
+/* Muda cor do link do item final */
+.item-moara a {
+    color: black;
+}
+
+/* Adiciona cor ao hover do item final e linha pontilhada embaixo */
+.item-moara:hover a {
+    background-color: aliceblue;
+    border-bottom: 1px dotted black;
 }

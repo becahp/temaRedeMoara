@@ -17,16 +17,20 @@ function gerar_redes_moara($r_type, $r_tax)
     $categorias_array = wp_list_pluck($allthecats, 'name', 'term_id');
 
     echo '<div class="texto-hover" id="texto-hover-' . $r_type . '"></div>';
-    echo '<ul class="cd-accordion cd-accordion--animated margin-top-lg margin-bottom-lg">';
+    echo '<div class="accordion-moara">';
+    echo '<ul class="cd-accordion primeiro-ul">';
 
     $categoria_count = 0;
     foreach ($categorias_array as $categoria_id => $categoria) {
         $categoria_slug = get_term($categoria_id, $r_tax)->slug;
         $checkbox_name = "group-" . $r_tax . "-" . $categoria_slug . "-" . $categoria_count;
 ?>
-        <li class="cd-accordion__item cd-accordion__item--has-children">
+        <li class="cd-accordion__item cd-accordion__item--has-children primeiro-li">
             <input class="cd-accordion__input" type="checkbox" name="<?php echo $checkbox_name ?>" id="<?php echo $checkbox_name ?>">
             <label class="cd-accordion__label cd-accordion__label--icon-folder" for="<?php echo $checkbox_name ?>">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
                 <span><?php echo $categoria; ?></span> <!-- CATEGORIA PAI -->
             </label>
 
@@ -47,6 +51,9 @@ function gerar_redes_moara($r_type, $r_tax)
                         <li class="cd-accordion__item cd-accordion__item--has-children">
                             <input class="cd-accordion__input" type="checkbox" name="<?php echo $checkbox_name_filho; ?>" id="<?php echo $checkbox_name_filho; ?>">
                             <label class="cd-accordion__label cd-accordion__label--icon-folder" for="<?php echo $checkbox_name_filho; ?>">
+                                <span class="icon">
+                                    <i class="fas fa-plus" aria-hidden="true"></i>
+                                </span>
                                 <span><?php echo $categoria_filho; ?></span> <!-- CATEGORIA FILHO -->
                             </label>
 
@@ -67,6 +74,9 @@ function gerar_redes_moara($r_type, $r_tax)
                                         <li class="cd-accordion__item cd-accordion__item--has-children">
                                             <input class="cd-accordion__input" type="checkbox" name="<?php echo $checkbox_name_neto; ?>" id="<?php echo $checkbox_name_neto; ?>">
                                             <label class="cd-accordion__label cd-accordion__label--icon-folder" for="<?php echo $checkbox_name_neto; ?>">
+                                                <span class="icon">
+                                                    <i class="fas fa-folder" aria-hidden="true"></i>
+                                                </span>
                                                 <span><?php echo $categoria_neto; ?></span> <!-- CATEGORIA NETO -->
                                             </label>
 
@@ -94,7 +104,7 @@ function gerar_redes_moara($r_type, $r_tax)
         $categoria_count += 1;
     } // fim do foreach $categorias_array
 
-    echo '</ul>';
+    echo '</ul></div>';
 }
 
 
@@ -137,9 +147,9 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
     $the_query = new WP_Query($args);
     // The Loop
     if ($the_query->have_posts()) {
-        //echo '<ol>';
+        // echo '<ol>';
         while ($the_query->have_posts()) {
-            echo '<li class="cd-accordion__item">';
+            echo '<li class="cd-accordion__item item-moara">';
             $the_query->the_post();
         ?>
             <div onmouseover="mouseOver(this);" onmouseout="mouseOut();"><a href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a>
@@ -148,7 +158,7 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
 <?php
             echo '</li>';
         }
-        //echo '</ol>';
+        // echo '</ol>';
     } else {
         //echo '<br>no posts found';
     }
