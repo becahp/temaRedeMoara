@@ -1035,19 +1035,19 @@ function query_post_type($query) {
 
 function getNameRede($slugRede){
 	switch($slugRede){
-		case "rede-1":
+		case "rede-5":
 			return "Ciências Agrárias";
 		case "rede-2":
 			return "Ciências Biológicas";
-		case "rede-3":
-			return "Ciências da Saúde";
 		case "rede-4":
+			return "Ciências da Saúde";
+		case "rede-1":
 			return "Ciências Exatas e da Terra";
-		case "rede-5":
+		case "rede-3":
 			return "Engenharias";
-		case "rede-6":
-			return "Ciências Humanass";
 		case "rede-7":
+			return "Ciências Humanas";
+		case "rede-6":
 			return "Ciências Sociais Aplicadas";
 		case "rede-8":
 			return "Lingüística, Letras e Artes";
