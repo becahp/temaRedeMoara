@@ -151,11 +151,19 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
         while ($the_query->have_posts()) {
             echo '<li class="cd-accordion__item item-moara">';
             $the_query->the_post();
+            $cats = get_the_category_instituicoes();
+
         ?>
-            <div onmouseover="mouseOver(this);" onmouseout="mouseOut();"><a href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a>
+            <div onmouseover="mouseOver(this);" onmouseout="mouseOut();">
+                <a class="item-moara-a" href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a>
+                <?php foreach ($cats as $cat) { ?>
+                    - <a class="item-moara-cat" href="<?php echo get_category_link($cat->term_id) ?>">
+                        <?php echo $cat->name; ?>
+                    </a>
+                <?php } ?>
                 <span class='d-none'><?php echo wp_trim_words(get_field('texto_hover'), 120) ?></span>
             </div>
-<?php
+        <?php
             echo '</li>';
         }
         // echo '</ol>';
@@ -164,4 +172,56 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
     }
     /* Restore original Post Data */
     wp_reset_postdata();
+}
+
+// Cópia de get_the_category
+function get_the_category_instituicoes($post_id = false)
+{
+    $categories = get_the_terms($post_id, 'instituicoes');
+
+    if (!$categories || is_wp_error($categories)) {
+        $categories = array();
+    }
+
+    $categories = array_values($categories);
+
+    foreach (array_keys($categories) as $key) {
+        _make_cat_compat($categories[$key]);
+    }
+
+    /**
+     * Filters the array of categories to return for a post.
+     *
+     * @since 3.1.0
+     * @since 4.4.0 Added the `$post_id` parameter.
+     *
+     * @param WP_Term[] $categories An array of categories to return for the post.
+     * @param int|false $post_id    The post ID.
+     */
+    return apply_filters('get_the_categories', $categories, $post_id);
+}
+
+add_shortcode('shortcode_instituicoes', 'mostrarInstituicoes');
+function mostrarInstituicoes()
+{
+    $args = array(
+        'taxonomy' => 'instituicoes',
+        'orderby' => 'name',
+        'order'   => 'ASC'
+    );
+
+    $cats = get_categories($args);
+
+    echo '<h2>Instituições</h2>';
+    echo '<ul>';
+    foreach ($cats as $cat) {
+        ?>
+        <li>
+            <a href="<?php echo get_category_link($cat->term_id) ?>">
+                <?php echo $cat->name . ' (' . $cat->count . ')'; ?>
+            </a>
+        </li>
+<?php
+    }
+    echo '</ul>';
 }

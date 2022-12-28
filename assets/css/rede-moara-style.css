@@ -72,13 +72,18 @@ li {
 }
 
 /* Adiciona cor ao hover do item final e linha pontilhada embaixo */
-.item-moara:hover a {
+.item-moara-a:hover {
     background-color: aliceblue;
     border-bottom: 1px dotted black;
 }
 
+/* Adiciona cor ao hover da categoria do item final e linha pontilhada ao redor */
+.item-moara-cat:hover {
+    background-color: beige;
+    border: 1px dashed black;
+}
 
 /* Classes para o elemento que abarca os accordions - elementor */
-.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav > ul li {
-	min-height: 69px;
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li {
+    min-height: 69px;
 }

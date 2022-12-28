@@ -59,7 +59,6 @@ add_action('init', 'cptui_register_my_cpts');
 function cptui_register_my_taxes()
 {
 
-
     for ($i = 1; $i < 9; $i++) {
 
         $nome_slug_rede = 'rede-' . strval($i);
