@@ -76,3 +76,9 @@ li {
     background-color: aliceblue;
     border-bottom: 1px dotted black;
 }
+
+
+/* Classes para o elemento que abarca os accordions - elementor */
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav > ul li {
+	min-height: 69px;
+}
