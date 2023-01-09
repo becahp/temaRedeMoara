@@ -11,6 +11,7 @@ function gerar_redes_moara($r_type, $r_tax)
         'taxonomy'    => $r_tax,
         'orderby'    => 'name',
         'parent'    => 0, /* garantir que não trará as filhas */
+        'hide_empty' => 0, /* mostrar todas */
     );
 
     $allthecats = get_categories($args);
@@ -114,6 +115,7 @@ function retorna_filhos($categoria_id, $r_tax)
         'taxonomy'    => $r_tax,
         'orderby'    => 'name',
         'parent'    => $categoria_id,
+        'hide_empty' => 0, /* mostrar todas */
     );
 
     $filhos_categorias  = get_categories($filhos_args);

@@ -87,3 +87,13 @@ li {
 .elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li {
     min-height: 69px;
 }
+
+/* Classes para consertar ícones svg */
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li svg {
+    width: 30px;
+}
+
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li.active svg path.cls-1,
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li:hover>svg path.cls-1 {
+    fill: #fff;
+}
