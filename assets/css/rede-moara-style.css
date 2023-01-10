@@ -97,3 +97,7 @@ li {
 .elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li:hover>svg path.cls-1 {
     fill: #fff;
 }
+
+.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul {
+    z-index: 0;
+}
