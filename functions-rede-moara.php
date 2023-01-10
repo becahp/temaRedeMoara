@@ -214,7 +214,6 @@ function mostrarInstituicoes()
 
     $cats = get_categories($args);
 
-    echo '<h2>Instituições</h2>';
     echo '<ul>';
     foreach ($cats as $cat) {
         ?>
