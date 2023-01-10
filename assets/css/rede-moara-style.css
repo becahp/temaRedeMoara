@@ -88,16 +88,23 @@ li {
     min-height: 69px;
 }
 
-/* Classes para consertar ícones svg */
+/* Classes para consertar o tamanho ícones svg */
 .elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li svg {
     width: 30px;
 }
 
+/* Classes para consertar a cor ícones svg no hover */
 .elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li.active svg path.cls-1,
 .elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li:hover>svg path.cls-1 {
     fill: #fff;
 }
 
+/* ajustar z-index das abas de redes que estavam ficando por cima do header */
 .elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul {
     z-index: 0;
+}
+
+/* ajustar cor do erro no formulário */
+.wpforms-container label.wpforms-error {
+    color: red !important;
 }
