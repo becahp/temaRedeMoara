@@ -168,7 +168,9 @@
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/instituicoes"><span class="content">Instituições</span></a>
                           </div>
-                          <div><a class="menu-item" href="<?php echo home_url() ?>/cadastro"><span class="content">Faça parte da Rede</span></a>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/areas-do-conhecimento"><span class="content">Áreas do Conhecimento</span></a>
+                          </div>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/orientacoes"><span class="content">Faça parte da Rede</span></a>
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/contact"><span class="content">Contato</span></a>
                           </div>
