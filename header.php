@@ -206,7 +206,7 @@
               </div>
             </div>
             <div class="header-info">
-              <div class="header-title"><a class="linkTitulo" href="/rede_moara">Rede Moara</a></div>
+              <div class="header-title"><a class="linkTitulo" href="/">Rede Moara</a></div>
               <!-- <div class="header-subtitle">Subtítulo do Header</div> -->
             </div>
           </div>
