@@ -14,10 +14,18 @@ function gerar_redes_moara($r_type, $r_tax)
         'hide_empty' => 0, /* mostrar todas */
     );
 
+?>
+    <div class="titulo-categoria">
+        <img src="<?php echo getIconeRede($r_type) ?>" alt="alternatetext">
+        <p><?php echo getNameRede($r_type) ?></p>
+    </div>
+    <?php
+
     $allthecats = get_categories($args);
     $categorias_array = wp_list_pluck($allthecats, 'name', 'term_id');
 
     echo '<div class="texto-hover" id="texto-hover-' . $r_type . '"></div>';
+    echo '<div class="accordion-moara-container">';
     echo '<div class="accordion-moara">';
     echo '<ul class="cd-accordion primeiro-ul">';
 
@@ -25,7 +33,7 @@ function gerar_redes_moara($r_type, $r_tax)
     foreach ($categorias_array as $categoria_id => $categoria) {
         $categoria_slug = get_term($categoria_id, $r_tax)->slug;
         $checkbox_name = "group-" . $r_tax . "-" . $categoria_slug . "-" . $categoria_count;
-?>
+    ?>
         <li class="cd-accordion__item cd-accordion__item--has-children primeiro-li">
             <input class="cd-accordion__input" type="checkbox" name="<?php echo $checkbox_name ?>" id="<?php echo $checkbox_name ?>">
             <label class="cd-accordion__label cd-accordion__label--icon-folder" for="<?php echo $checkbox_name ?>">
@@ -105,7 +113,7 @@ function gerar_redes_moara($r_type, $r_tax)
         $categoria_count += 1;
     } // fim do foreach $categorias_array
 
-    echo '</ul></div>';
+    echo '</ul></div></div>';
 }
 
 
@@ -225,4 +233,29 @@ function mostrarInstituicoes()
 <?php
     }
     echo '</ul>';
+}
+
+
+function getIconeRede($slugRede)
+{
+    $caminho = get_template_directory_uri() . '/assets/images/icones-redes/';
+
+    switch ($slugRede) {
+        case "rede-5":
+            return $caminho . "ciencias_agrarias.svg";
+        case "rede-2":
+            return $caminho . "ciencias_biologicas.svg";
+        case "rede-4":
+            return $caminho . "ciencias_saude.svg";
+        case "rede-1":
+            return $caminho . "ciencias_exatas.svg";
+        case "rede-3":
+            return $caminho . "engenharias.svg";
+        case "rede-7":
+            return $caminho . "ciencias_humanas.svg";
+        case "rede-6":
+            return $caminho . "ciencias_sociais_aplicadas.svg";
+        case "rede-8":
+            return $caminho . "linguistica_artes.svg";
+    }
 }

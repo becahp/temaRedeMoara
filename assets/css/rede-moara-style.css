@@ -39,9 +39,18 @@
     margin: 0;
 }
 
+/*.accordion-moara-container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.accordion-moara {
+    width: -webkit-fill-available;
+}*/
+
 /* Adiciona borda aos primeiros li*/
 .primeiro-li {
-    border-bottom: 1px solid grey;
+    border-top: 1px solid #C4C4C4;
 }
 
 /* Remove o pontinho de ul e li */
@@ -53,12 +62,13 @@ li {
 /* Adiciona o cursor ao label e melhora padding */
 .accordion-moara label {
     cursor: pointer;
-    padding-block: 10px;
+    padding-block: 20px;
 }
 
 /* Adiciona cor ao hover do label */
 .accordion-moara label:hover {
     background-color: lightblue;
+    /* background-color: #e5c9f2; */
 }
 
 /* Melhora o padding do item final */
@@ -84,24 +94,25 @@ li {
 }
 
 /* Classes para o elemento que abarca os accordions - elementor */
-.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li {
-    min-height: 69px;
+.eael-advance-tabs .eael-tabs-nav>ul li {
+    min-height: 72px !important;
 }
 
 /* Classes para consertar o tamanho ícones svg */
-.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li svg {
-    width: 30px;
+.eael-advance-tabs .eael-tabs-nav>ul li svg {
+    width: 30px !important;
 }
 
 /* Classes para consertar a cor ícones svg no hover */
-.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li.active svg path.cls-1,
-.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul li:hover>svg path.cls-1 {
-    fill: #fff;
+.eael-advance-tabs .eael-tabs-nav>ul li.active svg path.cls-1,
+.eael-advance-tabs .eael-tabs-nav>ul li:hover>svg path.cls-1 {
+    fill: #fff !important;
 }
 
 /* ajustar z-index das abas de redes que estavam ficando por cima do header */
-.elementor-8754 .elementor-element.elementor-element-61b9920 .eael-advance-tabs .eael-tabs-nav>ul {
-    z-index: 0;
+.eael-advance-tabs .eael-tabs-nav>ul {
+    z-index: 0 !important;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 /* ajustar cor do erro no formulário */
@@ -116,5 +127,62 @@ li {
 
 .license:hover {
     text-decoration: none;
-    color: #5992ed 
+    color: #5992ed;
+}
+
+/* Adequação ao FIGMA */
+
+/* --------------------- status não ativo*/
+/* .eael-advance-tabs .eael-tabs-nav>ul li {
+    background-color: #F2F2F2 !important;
+    color: #000000 !important;
+}
+
+.eael-advance-tabs .eael-tabs-nav>ul li i {
+    color: #000000 !important;
+}
+
+.eael-advance-tabs .eael-tabs-nav>ul li svg path.cls-1,
+.eael-advance-tabs .eael-tabs-nav>ul li>svg path.cls-1 {
+    fill: #000000 !important;
+} */
+
+/* --------------------- status ativo*/
+/* .eael-advance-tabs .eael-tabs-nav>ul li.active,
+.eael-advance-tabs .eael-tabs-nav>ul li:hover,
+.eael-adv-accordion .eael-accordion-list .eael-accordion-header.active,
+.eael-adv-accordion .eael-accordion-list .eael-accordion-header:hover {
+    background-color: #B17DCB !important;
+    color: #fff !important;
+}
+
+.eael-advance-tabs .eael-tabs-nav>ul li:hover i {
+    color: #fff !important;
+}
+
+.eael-adv-accordion .eael-accordion-list .eael-accordion-header .fa-toggle,
+.eael-adv-accordion .eael-accordion-list .eael-accordion-header .fa-accordion-icon {
+    color: #B17DCB !important;
+}
+
+.eael-advance-tabs .eael-tabs-nav>ul li:after {
+    border-top-color: #B17DCB !important;
+} */
+
+/* Mostrar título e categoria */
+.titulo-categoria {
+    display: none;
+    /*change here to flex*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-categoria img {
+    height: 30px;
+}
+
+.titulo-categoria p {
+    font-size: 30px;
+    line-height: 42px;
+    color: #000000;
 }
