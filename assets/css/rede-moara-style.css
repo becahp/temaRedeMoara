@@ -108,3 +108,13 @@ li {
 .wpforms-container label.wpforms-error {
     color: red !important;
 }
+
+/* Footer */
+.license {
+    color: #fff;
+}
+
+.license:hover {
+    text-decoration: none;
+    color: #5992ed 
+}
