@@ -39,6 +39,7 @@
     margin: 0;
 }
 
+/*Para manter o conteúdo do accordion centralizado no meio*/
 /*.accordion-moara-container {
     width: 500px;
     margin: 0 auto;
@@ -67,8 +68,7 @@ li {
 
 /* Adiciona cor ao hover do label */
 .accordion-moara label:hover {
-    background-color: lightblue;
-    /* background-color: #e5c9f2; */
+    background-color: #e5c9f2;
 }
 
 /* Melhora o padding do item final */
@@ -133,7 +133,7 @@ li {
 /* Adequação ao FIGMA */
 
 /* --------------------- status não ativo*/
-/* .eael-advance-tabs .eael-tabs-nav>ul li {
+.eael-advance-tabs .eael-tabs-nav>ul li {
     background-color: #F2F2F2 !important;
     color: #000000 !important;
 }
@@ -145,10 +145,10 @@ li {
 .eael-advance-tabs .eael-tabs-nav>ul li svg path.cls-1,
 .eael-advance-tabs .eael-tabs-nav>ul li>svg path.cls-1 {
     fill: #000000 !important;
-} */
+}
 
 /* --------------------- status ativo*/
-/* .eael-advance-tabs .eael-tabs-nav>ul li.active,
+.eael-advance-tabs .eael-tabs-nav>ul li.active,
 .eael-advance-tabs .eael-tabs-nav>ul li:hover,
 .eael-adv-accordion .eael-accordion-list .eael-accordion-header.active,
 .eael-adv-accordion .eael-accordion-list .eael-accordion-header:hover {
@@ -167,14 +167,14 @@ li {
 
 .eael-advance-tabs .eael-tabs-nav>ul li:after {
     border-top-color: #B17DCB !important;
-} */
+}
 
 /* Mostrar título e categoria */
 .titulo-categoria {
-    display: none;
-    /*change here to flex*/
+    display: flex;
     flex-direction: column;
     align-items: center;
+    margin-block: 15px;
 }
 
 .titulo-categoria img {
