@@ -186,3 +186,19 @@ li {
     line-height: 42px;
     color: #000000;
 }
+
+/* Página de instituições */
+
+.instituicoes-categorias li {
+    padding-block: 10px;
+}
+
+.instituicoes-categorias a {
+    font-size: 16px;
+    color: #000000;
+}
+
+.instituicoes-categorias a:hover {
+    background-color: #e5c9f2;
+    border-bottom: 1px dotted black;
+}

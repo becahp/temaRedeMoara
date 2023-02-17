@@ -180,7 +180,7 @@
                           <div class="menu-social">
                             <div class="text-semi-bold mb-1">Título</div>
                             <div class="sharegroup">
-                              <div class="share"><a class="br-button circle" href="https://www.twitter.com/mcti" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                              <div class="share"><a class="br-button circle" href="https://www.twitter.com/gov_mcti" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                               </div>
                               <div class="share"><a class="br-button circle" href="https://www.youtube.com/mcti" aria-label="Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                               </div>
@@ -190,7 +190,7 @@
                               </div>
                               <div class="share"><a class="br-button circle" href="https://www.instagram.com/mcti" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                               </div>
-                              <div class="share"><a class="br-button circle" href="https://soundcloud.com/mcti" aria-label="Soundcloud"><i class="fab fa-soundcloud" aria-hidden="true"></i></a>
+                              <div class="share"><a class="br-button circle" href="https://soundcloud.com/gov_mcti" aria-label="Soundcloud"><i class="fab fa-soundcloud" aria-hidden="true"></i></a>
                               </div>
                             </div>
                           </div>
