@@ -222,17 +222,61 @@ function mostrarInstituicoes()
 
     $cats = get_categories($args);
 
-    echo '<ul class="instituicoes-categorias">';
-    foreach ($cats as $cat) {
-        ?>
+    ob_start();
+    ?>
+    <ul class="instituicoes-categorias">
+    <?php foreach ($cats as $cat) : ?>
         <li>
-            <a href="<?php echo get_category_link($cat->term_id) ?>">
-                <?php echo $cat->name . ' (' . $cat->count . ')'; ?>
-            </a>
+            <div class="elementor-element elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+                <div class="elementor-widget-container">
+                    <div class="elementor-image">
+                        <?php
+                            $image_src = '';
+                            switch($cat->slug) {
+                                case 'ibict':
+                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/ibict.png';
+                                break;
+                                case 'mcti':
+                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/mcti.png';
+                                break;
+                                case 'unb':
+                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/unb.png';
+                                break;
+                                default:
+                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/moara.png';
+                            }
+                         ?>
+                        <img decoding="async" src="<?php echo $image_src; ?>" class="attachment-large size-large" alt="" loading="lazy" style="width:100%;height:48.18%;max-width:110px" width="110">
+                    </div>
+                </div>
+            </div>
+            <div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+                <div class="elementor-widget-container">
+                    <h2 class="elementor-heading-title elementor-size-default">
+                        <?php echo $cat->name; ?>
+                    </h2>
+                </div>
+            </div>
+            <div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
+                <div class="elementor-widget-container">
+                    <div class="elementor-button-wrapper">
+                        <a href="<?php echo get_category_link($cat->term_id); ?>" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
+                            <span class="elementor-button-content-wrapper">
+                                <span class="elementor-button-text">Saiba mais</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+			</div>
         </li>
-<?php
-    }
-    echo '</ul>';
+    <?php endforeach; ?> 
+    </ul>
+    <?php
+
+    $html = ob_get_contents();
+    ob_end_clean();
+
+    return $html;
 }
 
 
