@@ -246,7 +246,7 @@ function mostrarInstituicoes()
                                     $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/moara.png';
                             }
                          ?>
-                        <img decoding="async" src="<?php echo $image_src; ?>" class="attachment-large size-large" alt="" loading="lazy" style="width:100%;height:48.18%;max-width:110px" width="110">
+                        <img decoding="async" src="<?php echo $image_src; ?>" class="attachment-large size-large" alt="<?php echo $cat->slug; ?>" loading="lazy" >
                     </div>
                 </div>
             </div>

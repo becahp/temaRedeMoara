@@ -219,7 +219,8 @@ li {
 
 .instituicoes-categorias .elementor-widget-button .elementor-button.elementor-size-md {
     --e-global-typography-accent-font-weight: 600;
-    border-radius: 90px; 
+    border-radius: 90px;
+    background-color: #B17DCB
 }
 
 .instituicoes-categorias .elementor-widget-heading .elementor-heading-title {
