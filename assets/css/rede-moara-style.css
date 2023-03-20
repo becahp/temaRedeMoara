@@ -228,3 +228,11 @@ li {
     font-size: 1.5rem;
     --e-global-color-primary: #333;
 }
+
+/* Classe auxiliar criada para forçar padding 0 em seções raizes do container do elementor */
+.paddingless-section.elementor-section .elementor-container>.elementor-row>.elementor-column {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
