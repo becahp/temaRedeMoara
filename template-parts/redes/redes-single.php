@@ -12,6 +12,15 @@
 ?>
 
 <article id="redes-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="container-lg">
+	<?php 
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail( 'thumbnail_post' );
+		} else {
+			echo '<img src="' . get_template_directory_uri() . '/assets/images/icones-redes/' . '" class="attachment-thumbnail_post size-thumbnail_post wp-post-image" alt="" decoding="async" style="width:100%;height:100.58%;max-width:107px;" width="107" height="86">';
+		}
+	?>
+	</div>
 	<div class="container-lg container-rcc-post">
 		<header class="entry-header alignwide">
 			<?php the_title( '<h1 class="entry-title titulo-post">', '</h1>' ); ?>
