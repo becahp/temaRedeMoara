@@ -249,9 +249,10 @@ li {
     font-size: 1.5rem;
 }
 
-.entry-content-moara p {
+.entry-content-moara {
     color: #555555;
     font-size: 1rem;
+    line-height: 1.875rem;
 }
 
 .social-media-moara label {
