@@ -17,7 +17,7 @@
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'thumbnail_post' );
 		} else {
-			echo '<img src="' . get_template_directory_uri() . '/assets/images/logos/' . '" class="attachment-thumbnail_post size-thumbnail_post wp-post-image" alt="" decoding="async" style="width:100%;height:100.58%;max-width:107px;" width="107" height="86">';
+			echo '<img src="' . get_template_directory_uri() . '/assets/images/logos/moara.png' . '" class="attachment-thumbnail_post size-thumbnail_post wp-post-image" alt="" decoding="async" style="width:100%;height:100.58%;max-width:107px;" width="107" height="86">';
 		}
 	?>
 	</div>
@@ -41,7 +41,7 @@
 
 		<div class="entry-content entry-content-rcc">
 
-			<h2>O que é?<h2>
+			<h2>O que é?</h2>
 			<ol>
 				<?php if ( get_field('descricao_codigo') ) : ?>
 				<li>
