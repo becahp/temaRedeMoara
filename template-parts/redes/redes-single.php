@@ -12,7 +12,7 @@
 ?>
 
 <article id="redes-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="container-lg">
+	<div class="container-lg" style="text-align: center;">
 	<?php 
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'thumbnail_post' );
@@ -21,7 +21,7 @@
 		}
 	?>
 	</div>
-	<div class="container-lg container-rcc-post">
+	<div class="container-lg container-rcc-post container-moara-post">
 		<header class="entry-header alignwide">
 			<?php the_title( '<h1 class="entry-title titulo-post">', '</h1>' ); ?>
 			<div class="row">
@@ -31,7 +31,7 @@
 					// função com "Postado em"
 					//funcao_publicado_em();?>
 				</div>
-				<div class="col-md-6 social-media-rcc">
+				<div class="col-md-6 social-media-rcc social-media-moara">
 					<?php
 					// Ícones de compartilhamento
 					echo do_shortcode('[shortcode_social_links]');?>
@@ -39,7 +39,7 @@
 			</div>
 		</header><!-- .entry-header -->
 
-		<div class="entry-content entry-content-rcc">
+		<div class="entry-content entry-content-rcc entry-content-moara">
 
 			<h2>O que é?</h2>
 			<ol>

@@ -236,3 +236,36 @@ li {
     padding-right: 0px;
     padding-top: 0px;
 }
+
+/* Adequações das classes da RCC para o design da rede Moara */
+.container-moara-post .entry-title {
+    color: #000000;
+    font-size: 2.25rem;
+}
+
+.entry-content-moara h2 {
+    color: #555555;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.entry-content-moara p {
+    color: #555555;
+    font-size: 1rem;
+}
+
+.social-media-moara label {
+    font-weight: normal;
+}
+
+.social-media-moara a {
+    color: white;
+    background-color: #B17DCB;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4px;
+}
