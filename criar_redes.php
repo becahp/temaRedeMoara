@@ -43,7 +43,7 @@ function cptui_register_my_cpts()
             "query_var" => true,
             "menu_position" => 6,
             "menu_icon" => "dashicons-search",
-            "supports" => ["title", "author"],
+            "supports" => ["title", "author", "thumbnail"],
             "show_in_graphql" => false,
         ];
 
