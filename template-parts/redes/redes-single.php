@@ -122,7 +122,7 @@
 					// função com "like em"
 					echo do_shortcode('[posts_like_dislike id='.get_the_ID().']');?>
 				</div>
-				<div class="col-md-6 social-media-rcc">
+				<div class="col-md-6 social-media-rcc social-media-moara">
 					<?php
 					// Ícones de compartilhamento
 					echo do_shortcode('[shortcode_social_links]');?>
