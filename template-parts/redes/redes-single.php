@@ -32,19 +32,69 @@
 
 		<div class="entry-content entry-content-rcc">
 
-			<?php if (get_field('visao')) {?>
-				<div class="mt-3 mb-3">
-					<div class="visao-texto">
-						<p>Veja no mapa as unidades:</p>
-						<a href="<?php the_field('visao');?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/assets/images/visao.png" alt="Visão" style="width: 50px;"> </a>
-					</div>
-				</div>
-			<?php } ?>
+			<h2>O que é?<h2>
+			<ol>
+				<?php if ( get_field('descricao_codigo') ) : ?>
+				<li>
+					<strong>Descrição do código</strong>: <?php the_field('descricao_codigo'); ?>
+				</li>
+				<?php endif; ?>
+				<?php if ( get_field('software_vinculado') ) : ?>
+				<li>
+					<strong>Software vinculado</strong>: <?php the_field('software_vinculado'); ?>
+				</li>
+				<?php endif; ?>
+				<?php if ( get_field('linguagens') ) : ?>
+				<li>
+					<strong>Linguagens utilizadas</strong>: <?php the_field('linguagens'); ?>
+				</li>
+				<?php endif; ?>
+			</ol>
 
-			<?php
-			//the_content();
-			the_field('texto');
-			?>
+			<h2>Quem fez?</h2>
+			<ol>
+				<?php if ( get_field('nome_depositante') ) : ?>
+				<li>
+					<strong>Nome do depositante</strong>: <?php echo get_field('curriculo_lattes') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_field('curriculo_lattes') . '">' . get_field('nome_depositante') . '</a>') : get_field('nome_depositante'); ?>
+				</li>
+				<?php endif; ?>
+				<?php if ( get_field('email_depositante') ) : ?>
+				<li>
+					<strong>Email do depositante</strong>: <?php echo '<a target="_blank" rel="noreferrer noopener" href="mailto:' . get_field('email_depositante') . '">' . get_field('email_depositante') . '</a>'; ?>
+				</li>
+				<?php endif; ?>
+				<?php if ( get_field('nome_unidade_vinculada') ) : ?>
+				<li>
+					<strong>Unidade de pesquisa vinculada</strong>: <?php echo get_field('site_unidade_vinculada') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_field('site_unidade_vinculada') . '">' . get_field('nome_unidade_vinculada') . '</a>') : get_field('nome_unidade_vinculada'); ?>
+				</li>
+				<?php endif; ?>
+				<?php if ( get_field('projeto_vinculado') ) : ?>
+				<li>
+					<strong>Projeto vinculado</strong>: <?php the_field('projeto_vinculado'); ?>
+				</li>
+				<?php endif; ?>
+				<?php if ( get_field('coordenacao_projeto') ) : ?>
+				<li>
+					<strong>Coordenação do projeto</strong>: <?php the_field('coordenacao_projeto'); ?>
+				</li>
+				<?php endif; ?>
+			</ol>
+
+			<h2>Como usar?</h2>
+			<ol>
+				<!-- <li>
+					<strong>Endereço</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin" target="_blank">https://github.com/becahp/mandala-editor-plugin</a>
+				</li> -->
+				<?php if ( get_field('funcionalidades') ) : ?>
+				<li>
+					<strong>Funcionalidades</strong>: <?php the_field('funcionalidades'); ?>
+				</li>
+				<?php endif; ?>
+				<!-- <li>
+					<strong>Licença de uso</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin/blob/main/LICENSE" target="_blank">GNU General Public License v3.0</a>
+				</li> -->
+			</ol>
+
 		</div><!-- .entry-content -->
 
 		<!-- Mostra o meta do post -->
