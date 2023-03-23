@@ -16,7 +16,7 @@
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail( 'medium-thumbnail' );
 			} else {
-				echo '<img src="' . get_template_directory_uri() . '/assets/images/icones-redes/' . '" class="attachment-medium-thumbnail size-medium-thumbnail wp-post-image" alt="" decoding="async" style="width:100%;height:100.58%;max-width:107px;" width="107" height="86">';
+				echo '<img src="' . get_template_directory_uri() . '/assets/images/logos/' . '" class="attachment-medium-thumbnail size-medium-thumbnail wp-post-image" alt="" decoding="async" style="width:100%;height:100.58%;max-width:107px;" width="107" height="86">';
 			}
 		?>
 		<h2><a class="post-title" href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a></h2>
