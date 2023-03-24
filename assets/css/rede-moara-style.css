@@ -112,6 +112,7 @@ li {
 /* ajustar z-index das abas de redes que estavam ficando por cima do header */
 .eael-advance-tabs .eael-tabs-nav>ul {
     z-index: 0 !important;
+    align-items: stretch;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
@@ -182,7 +183,7 @@ li {
 }
 
 .titulo-categoria p {
-    font-size: 30px;
+    font-size: 1.75rem;
     line-height: 42px;
     color: #000000;
 }
