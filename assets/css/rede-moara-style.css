@@ -264,6 +264,18 @@ li {
     line-height: 1.875rem;
 }
 
+@media screen and (max-width: 1024px) {
+    .container-moara-post {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container-moara-post {
+        width: 100%;
+        width: calc(100% - 1rem);
+    }
+}
+
 .social-media-moara label {
     font-weight: normal;
 }
