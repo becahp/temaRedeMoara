@@ -170,6 +170,14 @@ li {
     border-top-color: #B17DCB !important;
 }
 
+/* As abas devem quebrar em novas linhas já no desktops pequenos, se não gera overflow. */
+@media screen and (min-width: 1280px) {
+    .eael-advance-tabs .eael-tabs-nav > ul {
+        flex-wrap: wrap;
+    }
+}
+
+
 /* Mostrar título e categoria */
 .titulo-categoria {
     display: flex;
