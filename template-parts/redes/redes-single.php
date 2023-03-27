@@ -8,7 +8,6 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
 ?>
 
 <article id="redes-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -40,68 +39,92 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content entry-content-rcc entry-content-moara">
-
+	
 			<h2>O que é?</h2>
 			<ol>
-				<?php if ( get_field('descricao_codigo') ) : ?>
-				<li>
-					<strong>Descrição do código</strong>: <?php the_field('descricao_codigo'); ?>
-				</li>
-				<?php endif; ?>
-				<?php if ( get_field('software_vinculado') ) : ?>
-				<li>
-					<strong>Software vinculado</strong>: <?php the_field('software_vinculado'); ?>
-				</li>
-				<?php endif; ?>
-				<?php if ( get_field('linguagens') ) : ?>
-				<li>
-					<strong>Linguagens utilizadas</strong>: <?php the_field('linguagens'); ?>
-				</li>
-				<?php endif; ?>
+			<?php if( have_rows('o_que_e') ): ?>
+    			<?php while( have_rows('o_que_e') ):
+					
+					the_row(); 
+					
+					if ( get_sub_field('descricao_codigo') ) : ?>
+					<li>
+						<strong>Descrição do código</strong>: <?php the_sub_field('descricao_codigo'); ?>
+					</li>
+					<?php endif; ?>
+					<?php if ( get_sub_field('software_vinculado') ) : ?>
+					<li>
+						<strong>Software vinculado</strong>: <?php the_sub_field('software_vinculado'); ?>
+					</li>
+					<?php endif; ?>
+					<?php if ( get_sub_field('linguagens') ) : ?>
+					<li>
+						<strong>Linguagens utilizadas</strong>: <?php the_sub_field('linguagens'); ?>
+					</li>
+					<?php endif; ?>
+
+				<?php endwhile; ?>
+			<?php endif; ?>
 			</ol>
 
 			<h2>Quem fez?</h2>
 			<ol>
-				<?php if ( get_field('nome_depositante') ) : ?>
-				<li>
-					<strong>Nome do depositante</strong>: <?php echo get_field('curriculo_lattes') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_field('curriculo_lattes') . '">' . get_field('nome_depositante') . '</a>') : get_field('nome_depositante'); ?>
-				</li>
-				<?php endif; ?>
-				<?php if ( get_field('email_depositante') ) : ?>
-				<li>
-					<strong>Email do depositante</strong>: <?php echo '<a target="_blank" rel="noreferrer noopener" href="mailto:' . get_field('email_depositante') . '">' . get_field('email_depositante') . '</a>'; ?>
-				</li>
-				<?php endif; ?>
-				<?php if ( get_field('nome_unidade_vinculada') ) : ?>
-				<li>
-					<strong>Unidade de pesquisa vinculada</strong>: <?php echo get_field('site_unidade_vinculada') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_field('site_unidade_vinculada') . '">' . get_field('nome_unidade_vinculada') . '</a>') : get_field('nome_unidade_vinculada'); ?>
-				</li>
-				<?php endif; ?>
-				<?php if ( get_field('projeto_vinculado') ) : ?>
-				<li>
-					<strong>Projeto vinculado</strong>: <?php the_field('projeto_vinculado'); ?>
-				</li>
-				<?php endif; ?>
-				<?php if ( get_field('coordenacao_projeto') ) : ?>
-				<li>
-					<strong>Coordenação do projeto</strong>: <?php the_field('coordenacao_projeto'); ?>
-				</li>
-				<?php endif; ?>
+			<?php if( have_rows('quem_fez') ): ?>
+    			<?php while( have_rows('quem_fez') ):
+					
+					the_row(); 
+
+					if ( get_sub_field('nome_depositante') ) : ?>
+					<li>
+						<strong>Nome do depositante</strong>: <?php echo get_sub_field('curriculo_lattes') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_sub_field('curriculo_lattes') . '">' . get_sub_field('nome_depositante') . '</a>') : get_sub_field('nome_depositante'); ?>
+					</li>
+					<?php endif; ?>
+					<?php if ( get_sub_field('email_depositante') ) : ?>
+					<li>
+						<strong>Email do depositante</strong>: <?php echo '<a target="_blank" rel="noreferrer noopener" href="mailto:' . get_sub_field('email_depositante') . '">' . get_sub_field('email_depositante') . '</a>'; ?>
+					</li>
+					<?php endif; ?>
+					<?php if ( get_sub_field('nome_unidade_vinculada') ) : ?>
+					<li>
+						<strong>Unidade de pesquisa vinculada</strong>: <?php echo get_sub_field('site_unidade_vinculada') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_sub_field('site_unidade_vinculada') . '">' . get_sub_field('nome_unidade_vinculada') . '</a>') : get_sub_field('nome_unidade_vinculada'); ?>
+					</li>
+					<?php endif; ?>
+					<?php if ( get_sub_field('projeto_vinculado') ) : ?>
+					<li>
+						<strong>Projeto vinculado</strong>: <?php the_sub_field('projeto_vinculado'); ?>
+					</li>
+					<?php endif; ?>
+					<?php if ( get_sub_field('coordenacao_projeto') ) : ?>
+					<li>
+						<strong>Coordenação do projeto</strong>: <?php the_sub_field('coordenacao_projeto'); ?>
+					</li>
+					<?php endif; ?>
+				
+				<?php endwhile; ?>
+			<?php endif; ?>
 			</ol>
 
 			<h2>Como usar?</h2>
 			<ol>
-				<!-- <li>
-					<strong>Endereço</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin" target="_blank">https://github.com/becahp/mandala-editor-plugin</a>
-				</li> -->
-				<?php if ( get_field('funcionalidades') ) : ?>
-				<li>
-					<strong>Funcionalidades</strong>: <?php the_field('funcionalidades'); ?>
-				</li>
-				<?php endif; ?>
-				<!-- <li>
-					<strong>Licença de uso</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin/blob/main/LICENSE" target="_blank">GNU General Public License v3.0</a>
-				</li> -->
+			<?php if( have_rows('como_usar') ): ?>
+    			<?php while( have_rows('como_usar') ):
+					
+					the_row(); 
+
+					// <!-- <li>
+					// 	<strong>Endereço</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin" target="_blank">https://github.com/becahp/mandala-editor-plugin</a>
+					// </li> -->
+					if ( get_sub_field('funcionalidades') ) : ?>
+					<li>
+						<strong>Funcionalidades</strong>: <?php the_sub_field('funcionalidades'); ?>
+					</li>
+					<?php endif; ?>
+					<!-- <li>
+						<strong>Licença de uso</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin/blob/main/LICENSE" target="_blank">GNU General Public License v3.0</a>
+					</li> -->
+					
+				<?php endwhile; ?>
+			<?php endif; ?>
 			</ol>
 
 		</div><!-- .entry-content -->
