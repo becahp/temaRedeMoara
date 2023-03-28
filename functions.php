@@ -801,7 +801,7 @@ function funcao_publicado_em() {
 function funcao_post_footer() {
 	if ( has_category() || has_tag() ) {
 
-        echo '<div class="post-taxonomies cat-links-rcc">';
+        echo '<div class="post-taxonomies cat-links-rcc cat-links-moara">';
 
         /* translators: Used between list items, there is a space after the comma. */
         $categories_list = get_the_category_list( __( ', ', 'twentytwentyone' ) );

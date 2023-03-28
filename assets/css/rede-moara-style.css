@@ -304,3 +304,8 @@ li {
 .archive-moara .entry a:not(:hover):not(:focus) {
     color: #000000;
 }
+
+.cat-links-moara {
+    margin-top: 42px;
+    font-size: 1rem;
+}
