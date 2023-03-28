@@ -55,14 +55,6 @@
                   <div class="title">Funcionalidades do Sistema</div>
                 </div>
                 <div class="align-items-center br-item">
-                  <button id="increase-font" class="br-button circle small" type="button" accesskey="1"><b>A+</b><span class="text">Aumentar Fonte</span>
-                  </button>
-                </div>
-                <div class="align-items-center br-item">
-                  <button id="decrease-font" class="br-button circle small" type="button" accesskey="2"><b>A-</b><span class="text">Diminuir Fonte</span>
-                  </button>
-                </div>
-                <div class="align-items-center br-item">
                   <button class="br-button circle small" type="button" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()"><i class="fas fa-adjust" aria-hidden="true"></i><span class="text">Alto contraste</span>
                   </button>
                 </div>
