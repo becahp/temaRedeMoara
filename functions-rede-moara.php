@@ -165,7 +165,7 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
 
         ?>
             <div onmouseover="mouseOver(this);" onmouseout="mouseOut();">
-                <a class="item-moara-a" href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a>
+                <a class="item-moara-a" href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
                 <?php foreach ($cats as $cat) { ?>
                     - <a class="item-moara-cat" href="<?php echo get_category_link($cat->term_id) ?>">
                         <?php echo $cat->name; ?>
