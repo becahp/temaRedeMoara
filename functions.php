@@ -886,15 +886,24 @@ function meu_arrr_custom_loop($r_type = 'post', $r_post_num, $r_tax = 'category'
 		)
 	);
 	$the_query = new WP_Query( $args );
+	
 	// The Loop
 	if ( $the_query->have_posts() ) {
 		echo '<ol>';
 		while ( $the_query->have_posts() ) {
 			echo '<li>';
 			$the_query->the_post();
+			
+			$como_usar = get_field('como_usar');
+			$link = get_title();
+
+			if ( $como_usar && isset($como_usar['url']) )
+				$link = '<a href="' . $como_usar['url'] . '" target="_blank">'. get_title() . '</a>';
+			
 			?>
-			<div onmouseover="mouseOver(this);" onmouseout="mouseOut();"><a href="<?php the_field('url'); ?>" target="_blank"><?php the_title(); ?></a>
-  				<span class='d-none'><?php echo wp_trim_words(get_field('texto_hover'), 120) ?></span>
+			<div onmouseover="mouseOver(this);" onmouseout="mouseOut();">
+				<?php echo $link; ?>
+  				<span class='d-none'><?php echo wp_trim_words(get_the_excerpt(), 120) ?></span>
 			</div>
 			<?php
 			echo '</li>';

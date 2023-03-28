@@ -21,7 +21,7 @@
 		?>
 		<h2><a class="post-title" href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h2>
 		<!--<p class="post-excerpt"><?php #echo get_the_excerpt(); ?></p> -->
-		<p class="post-excerpt"><?php echo wp_trim_words(get_field("texto_hover"), 30) ?></p>
+		<p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 30) ?></p>
 		<a class="moretext" href="<?php the_permalink(); ?>" target="_blank">Veja o projeto &#10140;</a>
 	</article><!-- #post-${ID} -->
 </div>

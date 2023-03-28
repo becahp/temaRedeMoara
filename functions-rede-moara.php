@@ -171,7 +171,7 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
                         <?php echo $cat->name; ?>
                     </a>
                 <?php } ?>
-                <span class='d-none'><?php echo wp_trim_words(get_field('texto_hover'), 120) ?></span>
+                <span class='d-none'><?php echo wp_trim_words(get_the_excerpt(), 120) ?></span>
             </div>
     <?php
             echo '</li>';

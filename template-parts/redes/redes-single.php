@@ -112,13 +112,15 @@
 					<?php while (have_rows('como_usar')) :
 
 						the_row();
-
-						// <!-- <li>
-						// 	<strong>Endereço</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin" target="_blank">https://github.com/becahp/mandala-editor-plugin</a>
-						// </li> -->
+						
 						if (get_sub_field('funcionalidades')) : ?>
 							<li>
 								<strong>Funcionalidades</strong>: <?php the_sub_field('funcionalidades'); ?>
+							</li>
+						<?php endif; ?>
+						<?php if (get_sub_field('url')) : ?>
+							<li>
+								<strong>Link</strong>: <a target="_blank" rel="noreferrer noopener" href="<?php the_sub_field('url'); ?>">Veja o projeto no GitLab da Rede Moara</a>
 							</li>
 						<?php endif; ?>
 						<!-- <li>
