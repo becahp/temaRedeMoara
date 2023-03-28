@@ -173,7 +173,7 @@ function meu_arrr_custom_loop_moara($r_type = 'post', $r_post_num, $r_tax = 'cat
                 <?php } ?>
                 <span class='d-none'><?php echo wp_trim_words(get_field('texto_hover'), 120) ?></span>
             </div>
-        <?php
+    <?php
             echo '</li>';
         }
         // echo '</ol>';
@@ -225,53 +225,53 @@ function mostrarInstituicoes()
     ob_start();
     ?>
     <ul class="instituicoes-categorias">
-    <?php foreach ($cats as $cat) : ?>
-        <li>
-            <div class="elementor-element elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
-                <div class="elementor-widget-container">
-                    <div class="elementor-image">
-                        <?php
+        <?php foreach ($cats as $cat) : ?>
+            <li>
+                <div class="elementor-element elementor-element elementor-widget elementor-widget-image" data-element_type="widget" data-widget_type="image.default">
+                    <div class="elementor-widget-container">
+                        <div class="elementor-image">
+                            <?php
                             $image_src = '';
-                            switch($cat->slug) {
+                            switch ($cat->slug) {
                                 case 'ibict':
-                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/ibict.png';
-                                break;
+                                    $image_src = esc_url(get_template_directory_uri()) . '/assets/images/logos/ibict.png';
+                                    break;
                                 case 'mcti':
-                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/mcti.png';
-                                break;
+                                    $image_src = esc_url(get_template_directory_uri()) . '/assets/images/logos/mcti.png';
+                                    break;
                                 case 'unb':
-                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/unb.png';
-                                break;
+                                    $image_src = esc_url(get_template_directory_uri()) . '/assets/images/logos/unb.png';
+                                    break;
                                 default:
-                                    $image_src = esc_url( get_template_directory_uri() ) . '/assets/images/logos/moara.png';
+                                    $image_src = esc_url(get_template_directory_uri()) . '/assets/images/logos/moara.png';
                             }
-                         ?>
-                        <img decoding="async" src="<?php echo $image_src; ?>" class="attachment-large size-large" alt="<?php echo $cat->slug; ?>" loading="lazy" >
+                            ?>
+                            <img decoding="async" src="<?php echo $image_src; ?>" class="attachment-large size-large" alt="<?php echo $cat->slug; ?>" loading="lazy">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
-                <div class="elementor-widget-container">
-                    <h2 class="elementor-heading-title elementor-size-default">
-                        <?php echo $cat->name; ?>
-                    </h2>
-                </div>
-            </div>
-            <div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
-                <div class="elementor-widget-container">
-                    <div class="elementor-button-wrapper">
-                        <a href="<?php echo get_category_link($cat->term_id); ?>" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
-                            <span class="elementor-button-content-wrapper">
-                                <span class="elementor-button-text">Saiba mais</span>
-                            </span>
-                        </a>
+                <div class="elementor-element elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+                    <div class="elementor-widget-container">
+                        <h2 class="elementor-heading-title elementor-size-default">
+                            <?php echo $cat->name; ?>
+                        </h2>
                     </div>
                 </div>
-			</div>
-        </li>
-    <?php endforeach; ?> 
+                <div class="elementor-element elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-widget_type="button.default">
+                    <div class="elementor-widget-container">
+                        <div class="elementor-button-wrapper">
+                            <a href="<?php echo get_category_link($cat->term_id); ?>" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
+                                <span class="elementor-button-content-wrapper">
+                                    <span class="elementor-button-text">Saiba mais</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; ?>
     </ul>
-    <?php
+<?php
 
     $html = ob_get_contents();
     ob_end_clean();

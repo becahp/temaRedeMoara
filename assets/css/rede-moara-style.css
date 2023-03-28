@@ -172,7 +172,7 @@ li {
 
 /* As abas devem quebrar em novas linhas já no desktops pequenos, se não gera overflow. */
 @media screen and (min-width: 1280px) {
-    .eael-advance-tabs .eael-tabs-nav > ul {
+    .eael-advance-tabs .eael-tabs-nav>ul {
         flex-wrap: wrap;
     }
 }
@@ -269,11 +269,16 @@ li {
         width: 90%;
     }
 }
+
 @media screen and (max-width: 768px) {
     .container-moara-post {
         width: 100%;
         width: calc(100% - 1rem);
     }
+}
+
+.container-moara-img {
+    margin-top: 48px;
 }
 
 .social-media-moara label {
