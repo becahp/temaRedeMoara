@@ -44,6 +44,7 @@ function cptui_register_my_cpts()
             "menu_position" => 6,
             "menu_icon" => "dashicons-search",
             "supports" => ["title", "author", "thumbnail", "excerpt"],
+            "taxonomies" => ["category", "post_tag"],
             "show_in_graphql" => false,
         ];
 
