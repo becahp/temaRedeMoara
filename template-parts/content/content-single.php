@@ -14,7 +14,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php #twenty_twenty_one_post_thumbnail(); ?>
-	<div class="container-lg">
+	<div class="container-lg text-center">
 	<?php the_post_thumbnail( 'thumbnail_post' ); ?>
 	</div>
 	<div class="container-lg container-rcc-post">
