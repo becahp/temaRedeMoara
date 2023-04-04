@@ -123,10 +123,11 @@
 								<strong>Link</strong>: <a target="_blank" rel="noreferrer noopener" href="<?php the_sub_field('url'); ?>">Veja o projeto no GitLab da Rede Moara</a>
 							</li>
 						<?php endif; ?>
-						<!-- <li>
-						<strong>Licença de uso</strong>: <a rel="noreferrer noopener" href="https://github.com/becahp/mandala-editor-plugin/blob/main/LICENSE" target="_blank">GNU General Public License v3.0</a>
-					</li> -->
-
+						<?php if (get_sub_field('link_suporte')) : ?>
+							<li>
+								<strong>Fórum de suporte</strong>: <a target="_blank" rel="noreferrer noopener" href="<?php the_sub_field('link_suporte'); ?>"><?php the_sub_field('link_suporte'); ?></a>
+							</li>
+						<?php endif; ?>
 					<?php endwhile; ?>
 				<?php endif; ?>
 			</ol>
