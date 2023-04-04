@@ -166,6 +166,8 @@
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/contact"><span class="content">Contato</span></a>
                           </div>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/politica-de-uso"><span class="content">Política de Uso</span></a>
+                          </div>
                         </nav>
                         <div class="menu-footer">
                           <div class="menu-links"><a href="https://www.gov.br/pt-br/orgaos-do-governo">Órgãos do Governo&nbsp;<i class="fas fa-external-link-square-alt" aria-hidden="true"></i></a><a href="http://www4.planalto.gov.br/legislacao">Legislação&nbsp;<i class="fas fa-external-link-square-alt" aria-hidden="true"></i></a></div>
