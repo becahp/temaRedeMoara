@@ -158,15 +158,17 @@
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/sobre"><span class="content">Sobre</span></a>
                           </div>
-                          <div><a class="menu-item" href="<?php echo home_url() ?>/instituicoes"><span class="content">Instituições</span></a>
-                          </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/areas-do-conhecimento"><span class="content">Áreas do Conhecimento</span></a>
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/orientacoes"><span class="content">Faça parte da Rede</span></a>
                           </div>
-                          <div><a class="menu-item" href="<?php echo home_url() ?>/contact"><span class="content">Contato</span></a>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/instituicoes"><span class="content">Instituições</span></a>
                           </div>
-                          <div><a class="menu-item" href="<?php echo home_url() ?>/politica-de-uso"><span class="content">Política de Uso</span></a>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/politica-de-uso"><span class="content">Políticas de Uso</span></a>
+                          </div>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/equipe"><span class="content">Equipe Responsável</span></a>
+                          </div>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/contact"><span class="content">Contato</span></a>
                           </div>
                         </nav>
                         <div class="menu-footer">
