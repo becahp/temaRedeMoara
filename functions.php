@@ -489,6 +489,21 @@ function twenty_twenty_one_scripts() {
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
+
+	// Registra estilo e scripts do plugin de cookies consent 
+	wp_enqueue_style(
+		'osano-cookies-consent-style',
+		'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+	);
+	// Registra estilo do plugin de cookies consent 
+	wp_enqueue_script(
+		'osano-cookies-consent-script',
+		'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+	);
 }
 add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
 

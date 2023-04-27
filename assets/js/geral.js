@@ -11,6 +11,17 @@ function myFunctionBusca() {
 
 jQuery(document).ready(function ($) {
     (function () {
+
+        // Adiciona plugin de consentimento sobre cookies
+        window.cookieconsent.initialise({
+            "content": {
+              "message": "O Repositório de Códigos e Sistemas para CT&amp;I (Rede Moara) utiliza cookies, considerados arquivos que registram e gravam temporariamente no computador do usuário, para fins estatísticos e de aprimoramento de nossos serviços. Ao utilizar a Rede Moara você concorda com a política de monitoramento de cookies, conforme as preferências e navegações realizadas nas páginas deste Repositório.",
+              "dismiss": "Aceitar cookies",
+              "link": "Saiba mais",
+              "href": "https://redemoara.ibict.br/politica-de-uso/"
+            }
+        });
+
         var Contrast = {
             storage: 'contrastState',
             cssClass: 'contrast',
