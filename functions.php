@@ -497,7 +497,7 @@ function twenty_twenty_one_scripts() {
 		array(),
 		wp_get_theme()->get( 'Version' )
 	);
-	// Registra estilo do plugin de cookies consent 
+	// Registra script do plugin de cookies consent 
 	wp_enqueue_script(
 		'osano-cookies-consent-script',
 		'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
