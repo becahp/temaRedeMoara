@@ -56,7 +56,7 @@
 
 /* Remove o pontinho de ul e li */
 .accordion-moara ul,
-li {
+.accordion-moara li {
     list-style-type: none;
 }
 

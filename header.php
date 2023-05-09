@@ -164,7 +164,9 @@
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/instituicoes"><span class="content">Instituições</span></a>
                           </div>
-                          <div><a class="menu-item" href="<?php echo home_url() ?>/politica-de-uso"><span class="content">Políticas de Uso</span></a>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/politica-de-privacidade"><span class="content">Políticas de Privacidade</span></a>
+                          </div>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/regulacao-autoral"><span class="content">Regulação Autoral</span></a>
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/equipe"><span class="content">Equipe Responsável</span></a>
                           </div>
