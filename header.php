@@ -168,6 +168,8 @@
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/regulacao-autoral"><span class="content">Regulação Autoral</span></a>
                           </div>
+                          <div><a class="menu-item" href="<?php echo home_url() ?>/wp-content/uploads/2023/05/Termo_de_Repasse_de_Direitos-Patrimoniais_11-04-2023.pdf"><span class="content">Termo de Repasse</span></a>
+                          </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/equipe"><span class="content">Equipe Responsável</span></a>
                           </div>
                           <div><a class="menu-item" href="<?php echo home_url() ?>/contact"><span class="content">Contato</span></a>
