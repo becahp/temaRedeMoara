@@ -6,7 +6,7 @@ function myFunctionEntrar() {
 function myFunctionBusca() {
     var termo = document.getElementById("main-searchbox").value;
     //console.log(termo)
-    window.location.href = "/rede_moara/?s=" + termo;
+    window.location.href = "/?s=" + termo;
 }
 
 jQuery(document).ready(function ($) {

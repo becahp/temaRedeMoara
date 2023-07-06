@@ -4,7 +4,7 @@ buscaCX.addEventListener("keyup", function (event) {
         event.preventDefault();
         var termo = document.getElementById("main-searchbox").value;
         //console.log(termo)
-        window.location.href = "/rede_moara/?s=" + termo;
+        window.location.href = "/?s=" + termo;
     }
 });
 
