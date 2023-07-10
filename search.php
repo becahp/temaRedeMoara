@@ -13,7 +13,7 @@ get_header();
 
 if ( have_posts() ) {
 	?>
-	<div class="container-lg d-block">
+	<div class="container-lg d-block pagina-busca">
 	<header class="page-header alignwide">
 		<h1 class="page-title">
 			<?php

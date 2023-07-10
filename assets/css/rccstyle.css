@@ -156,6 +156,8 @@
     font-size: 12px;
     line-height: 17px;
     align-items: center;
+    margin-bottom: 8px;
+    display: inline-block;
 }
 
 .tag-links-rcc a:hover {
@@ -300,4 +302,37 @@
 .br-accordion .conteudo-redes a {
     color: black;
     border-bottom: 1px dotted black;
+}
+
+/* Css para não mostrar borda no menu*/
+
+/*
+.br-menu .menu-body .drop-menu>.menu-item {
+    border-bottom: none;
+}
+
+.texto-disclaimer {
+    font-style: italic;
+    font-size: small;
+    margin-bottom: 20px;
+    padding-top: 32px;
+}
+*/
+
+.pagina-busca {
+    margin-block: 20px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    padding-top: 32px;
+}
+
+.nav-links .page-numbers {
+    display: contents;
 }
