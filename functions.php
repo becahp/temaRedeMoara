@@ -412,17 +412,17 @@ function twenty_twenty_one_scripts() {
 
 	//Colocando css e js dos tema RCC
 	$ver = time();
-	wp_register_style( 'dsgov-class', get_template_directory_uri() . '/assets/css/dsgov.css', false, $ver );
-	wp_enqueue_style ( 'dsgov-class' );
+	#wp_register_style( 'dsgov-class', get_template_directory_uri() . '/assets/css/dsgov.css', false, $ver );
+	#wp_enqueue_style ( 'dsgov-class' );
 
-	wp_register_style( 'dsgovserprodesign-class', "https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css", false, $ver );
-	wp_enqueue_style ( 'dsgovserprodesign-class' );
+	#wp_register_style( 'dsgovserprodesign-class', "https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css", false, $ver );
+	#wp_enqueue_style ( 'dsgovserprodesign-class' );
 
-	wp_register_style( 'googleapis-class', "https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap", false, $ver );
-	wp_enqueue_style ( 'googleapis-class' );
+	#wp_register_style( 'googleapis-class', "https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap", false, $ver );
+	#wp_enqueue_style ( 'googleapis-class' );
 
-	wp_register_style( 'font-awesome-class', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css", false, $ver );
-	wp_enqueue_style ( 'font-awesome-class' );
+	#wp_register_style( 'font-awesome-class', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css", false, $ver );
+	#wp_enqueue_style ( 'font-awesome-class' );
 
 	wp_register_style( 'contrast-class', get_template_directory_uri() . '/assets/css/contrast.css', false, $ver );
 	wp_enqueue_style ( 'contrast-class' );
@@ -433,7 +433,8 @@ function twenty_twenty_one_scripts() {
 	wp_register_style( 'rede-moara-class', get_template_directory_uri() . '/assets/css/rede-moara-style.css', false, $ver );
 	wp_enqueue_style ( 'rede-moara-class' );
 
-	wp_enqueue_script( 'dsgov-js', get_template_directory_uri() . '/assets/js/dsgov.js' , array('jquery'), $ver, true);
+	#wp_enqueue_script( 'dsgov-js', get_template_directory_uri() . '/assets/js/dsgov.js' , array('jquery'), $ver, true);
+
 	wp_enqueue_script( 'geral-js', get_template_directory_uri() . '/assets/js/geral.js' , array('jquery'), $ver);
 	wp_enqueue_script( 'geral-footer-js', get_template_directory_uri() . '/assets/js/geral-footer.js' , array('jquery'), $ver, true);
 	//Fim
@@ -1080,16 +1081,22 @@ function getNameRede($slugRede){
 
 function getCategoryNameRede($slugRede){
 	switch($slugRede){
-		case "rede-de-formacao":
-			return "formacao_categoria";
-		case "rede-de-inovacao":
-			return "inovacao_categoria";
-		case "rede-de-pesquisa":
-			return "pesquisa_categoria";
-		case "rede-de-produto":
-			return "produto_categoria";
-		case "rede-de-suporte":
-			return "suporte_categoria_nova";
+		case "rede-5":
+			return "rede_5_categoria";
+		case "rede-2":
+			return "rede_2_categoria";
+		case "rede-4":
+			return "rede_4_categoria";
+		case "rede-1":
+			return "rede_1_categoria";
+		case "rede-3":
+			return "rede_3_categoria";
+		case "rede-7":
+			return "rede_7_categoria";
+		case "rede-6":
+			return "rede_6_categoria";
+		case "rede-8":
+			return "rede_8_categoria";
 	}
 }
 
@@ -1108,6 +1115,33 @@ add_filter('wp_mail_smtp_custom_options', function( $phpmailer ) {
 	return $phpmailer;
 } );
 
+// Função para registrar e enfileirar os estilos
+function enqueue_custom_styles() {
+	$ver = time();
 
+	// Registrar e enfileirar o estilo Font Rawline
+    wp_register_style('font-rawline', 'https://cdngovbr-ds.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css', false, $ver );
+    wp_enqueue_style('font-rawline');
+
+    // Registrar e enfileirar o estilo Font Raleway
+    wp_register_style('font-raleway', 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap', false, $ver );
+    wp_enqueue_style('font-raleway');
+
+    // Registrar e enfileirar o estilo Design System GOV.BR
+    wp_register_style('govbr-core', get_template_directory_uri() . '/node_modules/@govbr-ds/core/dist/core.min.css', false, $ver );
+    wp_enqueue_style('govbr-core');
+
+    // Registrar e enfileirar o estilo Fontawesome
+    wp_register_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', false, $ver );
+    wp_enqueue_style('fontawesome');
+
+	// Registrar o script do Design System GOV.BR
+	//wp_enqueue_script('govbr-core', get_template_directory_uri() . '/node_modules/@govbr-ds/core/dist/core.min.js', array('jquery'), $ver, true);
+	//O de cima não funciona, então vamos usar o de baixo
+	wp_enqueue_script( 'dsgov-js', get_template_directory_uri() . '/assets/js/dsgov.js' , array('jquery'), $ver, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
+include 'busca_avancada.php';
 include 'criar_redes.php';
 include 'functions-rede-moara.php';

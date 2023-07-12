@@ -106,3 +106,35 @@ function mouseOut() {
         card[i].style.visibility = "hidden";
     }
 }
+
+/**
+ * Função para carregar as categorias de acordo com a rede selecionada
+ */
+function carregaCategorias(val, minhaUrl) {
+    
+    jQuery(function ($) {
+        var loaderContainer, loader;
+        $.ajax({
+            type: "POST",
+            url: minhaUrl,
+            data: {
+                action: 'carrega_categorias',
+                id: val
+            },
+            beforeSend: function () {
+                loaderContainer = $('<span/>', {
+                    'class': 'loader-image-container'
+                }).insertBefore($('#categoriasDaRede'));
+
+                loader = $('<img/>', {
+                    src: '/wp-content/themes/temaTorre/assets/images/loading.gif',
+                    'class': 'loader-image'
+                }).appendTo(loaderContainer);
+            },
+            success: function (html) {
+                $('#categoriasDaRede').html(html);
+                loaderContainer.remove();
+            }
+        });
+    });
+}
