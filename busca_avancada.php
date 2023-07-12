@@ -219,30 +219,3 @@ function sm_pre_get_posts( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'sm_pre_get_posts', 1 );
-
-/* Função para mostrar os posts das redes em categorias e tags */
-#add_filter('pre_get_posts', 'query_post_type');
-#function query_post_type($query) {
-#  if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
-#    $post_type = get_query_var('post_type');
-#    if($post_type) {
-#        $post_type = $post_type;
-#	}
-#    else {
-#        $post_type = array('post','rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'); // replace cpt to your custom post type
-#	}
-#    $query->set('post_type',$post_type);
-#    return $query;
-#    }
-#}
-
-/* Função para restringir a busca aos posts das redes */
-//https://thomasgriffin.com/how-to-exclude-pages-from-wordpress-search-results/
-#add_action( 'pre_get_posts', 'tg_exclude_pages_from_search_results' );
-#function tg_exclude_pages_from_search_results( $query ) {
-#  if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
-#    //$query->set( 'post_type', array( 'post' ) );
-#    $post_type = array('rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'); // 
-#    $query->set('post_type',$post_type);
-#  }    
-#}
