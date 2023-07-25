@@ -119,6 +119,15 @@ function ajaxCarregaCategorias() {
   	   echo '<label class="ml-1" for="'.$cat->slug.'">'.$cat->name.'</label><br>';
 	   #echo '<a href="'.get_category_link( $cat->term_id ).'">'.$cat->name.'</a><br>';
    }
+
+   # Mostrando select para todas as categorias
+   echo '<select name="cars" id="cars">';
+   echo '<option value="volvo">Volvo</option>';
+   echo '<option value="saab">Saab</option>';
+   echo '<option value="opel">Opel</option>';
+   echo '<option value="audi">Audi</option>';
+   echo '</select>';
+
    echo '</div>';
    echo '</div>';
    die();
