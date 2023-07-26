@@ -100,33 +100,39 @@ function ajaxCarregaCategorias() {
 		die();
 	}
 	
-	$rede = getCategoryNameRede($_POST["id"]);
+	$rede = getCategoryNameRede($idRede);
 	#var_dump($rede);
 	$args = array(
 		'taxonomy' => $rede,
 		'orderby' => 'name',
-		'order'   => 'ASC'
+		'order'   => 'ASC',
+		'hide_empty' => 0, /* mostrar todas */
 	);
 	#var_dump($args);
    $cats = get_categories($args);
    #var_dump($cats);
    echo '<div class="post_types"><strong>Selecione a Classificação</strong>:<div class="ml-5">';
+   
+   echo '<select name="radioCat" id="radioCat">';
+   echo '<option value="todasCat" checked>Todas as classificações</option>';
+   #echo '<input type="radio" id="todasCat" name="radioCat" value="todasCat" checked>';
+   #echo '<label class="ml-1" for="todasCat">Todas as classificações</label><br>';
 
-   echo '<input type="radio" id="todasCat" name="radioCat" value="todasCat" checked>';
-   echo '<label class="ml-1" for="todasCat">Todas as classificações</label><br>';
    foreach($cats as $cat) {
-	   echo '<input type="radio" id="'.$cat->slug.'" name="radioCat" value="'.$cat->slug.'">';
-  	   echo '<label class="ml-1" for="'.$cat->slug.'">'.$cat->name.'</label><br>';
+	echo '<option value="' . $cat->slug . '">' . $cat->name . '</option>';
+	   #echo '<input type="radio" id="'.$cat->slug.'" name="radioCat" value="'.$cat->slug.'">';
+  	   #echo '<label class="ml-1" for="'.$cat->slug.'">'.$cat->name.'</label><br>';
 	   #echo '<a href="'.get_category_link( $cat->term_id ).'">'.$cat->name.'</a><br>';
    }
+   echo '</select>';
 
    # Mostrando select para todas as categorias
-   echo '<select name="cars" id="cars">';
-   echo '<option value="volvo">Volvo</option>';
-   echo '<option value="saab">Saab</option>';
-   echo '<option value="opel">Opel</option>';
-   echo '<option value="audi">Audi</option>';
-   echo '</select>';
+   # echo '<select name="cars" id="cars">';
+   # echo '<option value="volvo">Volvo</option>';
+   # echo '<option value="saab">Saab</option>';
+   # echo '<option value="opel">Opel</option>';
+   # echo '<option value="audi">Audi</option>';
+   # echo '</select>';
 
    echo '</div>';
    echo '</div>';
