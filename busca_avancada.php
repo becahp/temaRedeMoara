@@ -85,6 +85,47 @@ function busca_avancada_redes() {
 	
 	$form = str_replace( '</form>', implode( "\n", $additional_fields ) . '</form>', $form );
 
+?>
+<!-- exemplo de select do dsgov -->
+<div class="br-select">
+ <div class="br-input">
+  <label for="select-simple">Select Simples</label>
+  <input id="select-simple" type="text" placeholder="Selecione o item" />
+  <button
+   class="br-button circle small"
+   type="button"
+   tabindex="-1"
+   data-trigger
+  >
+   <span class="sr-only">Exibir lista</span
+   ><i class="fas fa-angle-down"></i>
+  </button>
+ </div>
+ <div class="br-list" tabindex="0">
+  <div class="br-item divider" tabindex="-1">
+   <div class="br-radio">
+    <input id="rb0" type="radio" name="opcao" value="opcao1" />
+    <label for="rb0">Opção 1</label>
+   </div>
+  </div>
+  <div class="br-item divider" tabindex="-1">
+   <div class="br-radio">
+    <input id="rb1" type="radio" name="opcao" value="opcao2" />
+    <label for="rb1">Opção 2</label>
+   </div>
+  </div>
+  <div class="br-item divider" tabindex="-1">
+   <div class="br-radio">
+    <input id="rb2" type="radio" name="opcao" value="opcao3" />
+    <label for="rb2">Opção 3</label>
+   </div>
+  </div>
+ </div>
+ <div class="feedback">Texto auxiliar Função de previnir erros.</div>
+</div>
+
+<?php
+
 	return $form;
 }
 
