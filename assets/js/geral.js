@@ -110,31 +110,17 @@ function mouseOut() {
 /**
  * Função para carregar as categorias de acordo com a rede selecionada
  */
-function carregaCategorias(val, minhaUrl) {
-    
-    jQuery(function ($) {
-        var loaderContainer, loader;
-        $.ajax({
-            type: "POST",
-            url: minhaUrl,
-            data: {
-                action: 'carrega_categorias',
-                id: val
-            },
-            beforeSend: function () {
-                loaderContainer = $('<span/>', {
-                    'class': 'loader-image-container'
-                }).insertBefore($('#categoriasDaRede'));
-
-                loader = $('<img/>', {
-                    src: '/wp-content/themes/temaTorre/assets/images/loading.gif',
-                    'class': 'loader-image'
-                }).appendTo(loaderContainer);
-            },
-            success: function (html) {
-                $('#categoriasDaRede').html(html);
-                loaderContainer.remove();
-            }
-        });
-    });
+function carregaCategorias(val) {
+    document.getElementById('categorias-div').style.display = "inline";
+    //'rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'
+    //mostrar apenas o val e esconder os outros
+    document.getElementById('lista-rede-1').style.display = "none";
+    document.getElementById('lista-rede-2').style.display = "none";
+    document.getElementById('lista-rede-3').style.display = "none";
+    document.getElementById('lista-rede-4').style.display = "none";
+    document.getElementById('lista-rede-5').style.display = "none";
+    document.getElementById('lista-rede-6').style.display = "none";
+    document.getElementById('lista-rede-7').style.display = "none";
+    document.getElementById('lista-rede-8').style.display = "none";
+    document.getElementById('lista-'+val).style.display = "inline"; 
 }

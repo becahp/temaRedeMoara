@@ -29,12 +29,6 @@ function busca_avancada_redes() {
 		$additional_fields[] = '<div class="ml-5"><span class="post_type">'
 				. '<input type="radio" id="todasRedes" name="post_types" value="todasRedes" checked="checked" onclick=" carregaCategorias(this.value,\''.$myUrl.'\')"/>'
 				. '<label class="ml-1" for="todasRedes">Todas as Áreas</label></span></div>';
-				// Radio button do DS.Gov
-				#.'<div class="br-radio">'
-				#.'  <input id="todasRedes" type="radio" name="post_types" value="todasRedes"' . $checked . ' onclick=" carregaCategorias(this.value,\''.$myUrl.'\')"/>'
-				#.'  <label for="todasRedes">Todas as Áreas</label>'
-				#.'</div>'
-				#.'</div>';
 		
 		foreach ( $post_types as $post_type ) {
 			$checked = '';
@@ -44,168 +38,94 @@ function busca_avancada_redes() {
 			}
 			if ( isset( $post_type_objects[ $post_type ] ) ) {
 				$additional_fields[] = '<div class="ml-5"><span class="post_type post_type_' . $post_type . '">'
-				. '<input type="radio" id="'.$post_type.'" name="post_types" value="' . $post_type . '"' . $checked . ' onclick=" carregaCategorias(this.value,\''.$myUrl.'\')"/>'
+				. '<input type="radio" id="'.$post_type.'" name="post_types" value="' . $post_type . '"' . $checked . ' onclick=" carregaCategorias(this.value)"/>'
 				. '<label class="ml-1" for="'.$post_type.'">'.getNameRede($post_type_objects[ $post_type ]->name).'</label></span></div>';
-				// Radio button do DS.Gov
-				#.'<div class="br-radio">'
-				#.'  <input id="'.$post_type.'" type="radio" name="post_types" value="' . $post_type . '"' . $checked . ' onclick=" carregaCategorias(this.value,\''.$myUrl.'\')"/>'
-				#.'  <label for="'.$post_type.'">'.getNameRede($post_type_objects[ $post_type ]->name).'</label>'
-				#.'</div>'
-				#.'</div>';
-
 			}
 		}
 		$additional_fields[] = '</div>';
 	}
+	
+	// Adicionando os select de categorias do DS.Gov 
+	$additional_fields[] = '<div id="categorias-div" style="display: none;" class="post_types"><strong>Selecione a Classificação</strong>:<div class="ml-5">';
+	// Um select para cada post type (rede)
+	foreach ( $post_types as $post_type ) {
+		$additional_fields[] = '<div id="lista-'.$post_type.'" style="display: none;"><div class="br-select">'
+			.'<div class="br-input">'
+			.'<input id="select-'.$post_type.'" type="text" placeholder="Selecione o item" />'
+			.'<button class="br-button circle small" type="button" tabindex="-1" data-trigger><span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i></button>'
+			.'</div>'
+			.'<div class="br-list" tabindex="0">'
+			.'<div class="br-item divider" tabindex="-1">'
+			.'<div class="br-radio">'
+			.'<input id="todasCat" type="radio" name="todasCat" value="todasCat" />'
+			.'<label for="todasCat">Todas as classificações</label>'
+			.'</div>'
+			.'</div>';
+		$rede = getCategoryNameRede($post_type);
+		$args = array(
+			'taxonomy' => $rede,
+			'orderby' => 'name',
+			'order'   => 'ASC',
+			'hide_empty' => 0, /* mostrar todas */
+		);
+		$cats = get_categories($args);
+		foreach($cats as $cat) {
+			$additional_fields[] = '<div class="br-item divider" tabindex="-1">'
+				.'<div class="br-radio">'
+				.'<input id="'.$cat->slug.'" type="radio" name="'.$cat->slug.'" value="'.$cat->slug.'" />'
+				.'<label for="'.$cat->slug.'">'.$cat->name.'</label>'
+				.'</div>'
+				.'</div>';
+		}
+		$additional_fields[] = '</div></div>'
+			.'</div>';
+	}
+	
+	$additional_fields[] = '</div></div>';
+
 	$additional_fields[] = '<input type="hidden" name="action" value="buscaAvancadaAction">';
 	$additional_fields[] = '<div id="categoriasDaRede"></div>';
 	$additional_fields[] = '<div id="publicoAlvo">'
-		.'<div class="post_types"><strong>Selecione o Público Alvo:</strong><div class="ml-5">'
-		.'<input type="checkbox" id="startup" name="startup" value="Startup">'
-		.'<label class="ml-1" for="startup">Startup</label><br>'
-		.'<input type="checkbox" id="mpe" name="mpe" value="MPE">'
-		.'<label class="ml-1" for="mpe">MPE</label><br>'
-		.'<input type="checkbox" id="mEmpresa" name="mEmpresa" value="Média+Empresa">'
-		.'<label class="ml-1" for="mEmpresa">Média Empresa</label><br>'
-		.'<input type="checkbox" id="gEmpresa" name="gEmpresa" value="Empresa+de+grande+porte">'
-		.'<label class="ml-1" for="gEmpresa">Empresa de grande porte</label><br>'
-		.'<input type="checkbox" id="governo" name="governo" value="Governo">'
-		.'<label class="ml-1" for="governo">Governo</label><br>'
-		.'<input type="checkbox" id="icts" name="icts" value="ICTs">'
-		.'<label class="ml-1" for="icts">ICTs</label><br>'
-		.'<input type="checkbox" id="investidor" name="investidor" value="Investidor">'
-		.'<label class="ml-1" for="investidor">Investidor</label><br>'
-		.'<input type="checkbox" id="pesquisador" name="pesquisador" value="Pesquisador">'
-		.'<label class="ml-1" for="pesquisador">Pesquisador</label><br>'
-		.'<input type="checkbox" id="tSetor" name="tSetor" value="Terceiro+Setor">'
-		.'<label class="ml-1" for="tSetor">Terceiro Setor</label><br>'
-		.'<input type="checkbox" id="pf" name="pf" value="Pessoa+física">'
-		.'<label class="ml-1" for="pf">Pessoa física</label><br>'
-		.'</div></div></div>';
+		.'<div class="post_types"><strong>Selecione a Instituição:</strong><div class="ml-5">';
+	// Lista de instituições
+	$args = array(
+		'taxonomy' => 'instituicoes',
+		'orderby' => 'name',
+		'order'   => 'ASC',
+		'hide_empty' => 0, /* mostrar todas */
+	);
+	$cats = get_categories($args);
+	foreach($cats as $cat) {
+		$additional_fields[] = '<input type="checkbox" id="'.$cat->slug.'" name="'.$cat->slug.'" value="'.$cat->slug.'">'
+		.'<label class="ml-1" for="'.$cat->slug.'">'.$cat->name.'</label><br>';
+	}		
+	// --------------------
+	$additional_fields[] = '</div></div></div>';
 	
 	$form = str_replace( '</form>', implode( "\n", $additional_fields ) . '</form>', $form );
-
-?>
-<!-- exemplo de select do dsgov -->
-<div class="br-select">
- <div class="br-input">
-  <label for="select-simple">Select Simples</label>
-  <input id="select-simple" type="text" placeholder="Selecione o item" />
-  <button
-   class="br-button circle small"
-   type="button"
-   tabindex="-1"
-   data-trigger
-  >
-   <span class="sr-only">Exibir lista</span
-   ><i class="fas fa-angle-down"></i>
-  </button>
- </div>
- <div class="br-list" tabindex="0">
-  <div class="br-item divider" tabindex="-1">
-   <div class="br-radio">
-    <input id="rb0" type="radio" name="opcao" value="opcao1" />
-    <label for="rb0">Opção 1</label>
-   </div>
-  </div>
-  <div class="br-item divider" tabindex="-1">
-   <div class="br-radio">
-    <input id="rb1" type="radio" name="opcao" value="opcao2" />
-    <label for="rb1">Opção 2</label>
-   </div>
-  </div>
-  <div class="br-item divider" tabindex="-1">
-   <div class="br-radio">
-    <input id="rb2" type="radio" name="opcao" value="opcao3" />
-    <label for="rb2">Opção 3</label>
-   </div>
-  </div>
- </div>
- <div class="feedback">Texto auxiliar Função de previnir erros.</div>
-</div>
-
-<?php
 
 	return $form;
 }
 
 
-function ajaxCarregaCategorias() {
-
-	$idRede = ( isset( $_POST['id'] ) ) ? $_POST['id'] : '';
-
-	if( empty( $idRede ) )
-		return;
-	if( $idRede == 'todasRedes' ){
-		echo " ";
-		die();
-	}
-	
-	$rede = getCategoryNameRede($idRede);
-	#var_dump($rede);
-	$args = array(
-		'taxonomy' => $rede,
-		'orderby' => 'name',
-		'order'   => 'ASC',
-		'hide_empty' => 0, /* mostrar todas */
-	);
-	#var_dump($args);
-   $cats = get_categories($args);
-   #var_dump($cats);
-   echo '<div class="post_types"><strong>Selecione a Classificação</strong>:<div class="ml-5">';
-   
-   echo '<select name="radioCat" id="radioCat">';
-   echo '<option value="todasCat" checked>Todas as classificações</option>';
-   #echo '<input type="radio" id="todasCat" name="radioCat" value="todasCat" checked>';
-   #echo '<label class="ml-1" for="todasCat">Todas as classificações</label><br>';
-
-   foreach($cats as $cat) {
-	echo '<option value="' . $cat->slug . '">' . $cat->name . '</option>';
-	   #echo '<input type="radio" id="'.$cat->slug.'" name="radioCat" value="'.$cat->slug.'">';
-  	   #echo '<label class="ml-1" for="'.$cat->slug.'">'.$cat->name.'</label><br>';
-	   #echo '<a href="'.get_category_link( $cat->term_id ).'">'.$cat->name.'</a><br>';
-   }
-   echo '</select>';
-
-   # Mostrando select para todas as categorias
-   # echo '<select name="cars" id="cars">';
-   # echo '<option value="volvo">Volvo</option>';
-   # echo '<option value="saab">Saab</option>';
-   # echo '<option value="opel">Opel</option>';
-   # echo '<option value="audi">Audi</option>';
-   # echo '</select>';
-
-   echo '</div>';
-   echo '</div>';
-   die();
-}
-add_action('wp_ajax_carrega_categorias','ajaxCarregaCategorias');
-add_action('wp_ajax_nopriv_carrega_categorias', 'ajaxCarregaCategorias');
-
-
 function buscaAvancadaAction() {
 	// Tratamento de Público Alvo
 	$alvos = array();
-	if(isset($_POST['startup'])) $alvos[] = $_POST['startup'];
-	if(isset($_POST['mpe'])) $alvos[] = $_POST['mpe'];
-	if(isset($_POST['mEmpresa'])) $alvos[] = $_POST['mEmpresa'];
-	if(isset($_POST['gEmpresa'])) $alvos[] = $_POST['gEmpresa'];
-	if(isset($_POST['governo'])) $alvos[] = $_POST['governo'];
-	if(isset($_POST['icts'])) $alvos[] = $_POST['icts'];
-	if(isset($_POST['investidor'])) $alvos[] = $_POST['investidor'];
-	if(isset($_POST['pesquisador'])) $alvos[] = $_POST['pesquisador'];
-	if(isset($_POST['tSetor'])) $alvos[] = $_POST['tSetor'];
-	if(isset($_POST['pf'])) $alvos[] = $_POST['pf'];
+	if(isset($_POST['fap'])) $alvos[] = $_POST['fap'];
+	if(isset($_POST['ibict'])) $alvos[] = $_POST['ibict'];
+	if(isset($_POST['mcti'])) $alvos[] = $_POST['mcti'];
+	if(isset($_POST['unb'])) $alvos[] = $_POST['unb'];
+	
 
 	$urlPublico = '';
-	$publico = '&publico[]=';
+	$publico = '&instituicoes[]=';
 
 	if( count( $alvos ) > 1 ){
 		foreach($alvos as $alvo ){
 			$urlPublico .= $publico . $alvo;
 		}
 	} else if ( count( $alvos ) == 1 ) {
-		$urlPublico = '&publico='. $alvos[0];
+		$urlPublico = '&instituicoes='. $alvos[0];
 	}
 
 	// Insere um termo de pesquisa. ex: "cnpq"
@@ -239,10 +159,10 @@ add_action( 'admin_post_buscaAvancadaAction', 'buscaAvancadaAction' );
 // tutorial de https://www.smashingmagazine.com/2016/03/advanced-wordpress-search-with-wp_query/
 
 // Função para registrar novos variáveis na URL
-// URL passa a aceitar: /?publico=XXX&abrangencia=YYY
+// URL passa a aceitar: /?instituicoes=XXX&abrangencia=YYY
 function sm_register_query_vars( $vars ) {
-    $vars[] = 'publico';
-    $vars[] = 'abrangencia';
+    $vars[] = 'instituicoes';
+    #$vars[] = 'abrangencia';
     return $vars;
 } 
 add_filter( 'query_vars', 'sm_register_query_vars' );
@@ -258,8 +178,8 @@ function sm_pre_get_posts( $query ) {
     $meta_query = array();
 
     // add meta_query elements
-    if( !empty( get_query_var( 'publico' ) ) ){
-        $meta_query[] = array( 'key' => 'publico-alvo', 'value' => get_query_var( 'publico' ), 'compare' => 'LIKE' );
+    if( !empty( get_query_var( 'instituicoes' ) ) ){
+        $meta_query[] = array( 'key' => 'instituicoes', 'value' => get_query_var( 'instituicoes' ), 'compare' => 'LIKE' );
     }
 
     if( !empty( get_query_var( 'abrangencia' ) ) ){
