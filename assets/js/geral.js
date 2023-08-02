@@ -122,5 +122,10 @@ function carregaCategorias(val) {
     document.getElementById('lista-rede-6').style.display = "none";
     document.getElementById('lista-rede-7').style.display = "none";
     document.getElementById('lista-rede-8').style.display = "none";
-    document.getElementById('lista-'+val).style.display = "inline"; 
+
+	if (val == 'todasRedes') {
+        document.getElementById('categorias-div').style.display = "none";
+    } else {
+		document.getElementById('lista-'+val).style.display = "inline"; 
+	}
 }
