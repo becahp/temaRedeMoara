@@ -415,7 +415,7 @@ function twenty_twenty_one_scripts() {
 	wp_register_style( 'dsgov-class', get_template_directory_uri() . '/assets/css/dsgov.css', false, $ver );
 	wp_enqueue_style ( 'dsgov-class' );
 
-	wp_register_style( 'dsgovserprodesign-class', "https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css", false, $ver );
+	wp_register_style( 'dsgovserprodesign-class', "https://cdngovbr-ds.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css", false, $ver );
 	wp_enqueue_style ( 'dsgovserprodesign-class' );
 
 	wp_register_style( 'googleapis-class', "https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap", false, $ver );
