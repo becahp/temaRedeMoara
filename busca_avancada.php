@@ -112,11 +112,16 @@ function busca_avancada_redes()
 function buscaAvancadaAction() {
 	// Tratamento de Público Alvo
 	$alvos = array();
-	if(isset($_POST['fap'])) $alvos[] = $_POST['fap'];
-	if(isset($_POST['ibict'])) $alvos[] = $_POST['ibict'];
-	if(isset($_POST['mcti'])) $alvos[] = $_POST['mcti'];
-	if(isset($_POST['unb'])) $alvos[] = $_POST['unb'];
-	
+	$args = array(
+		'taxonomy' => 'instituicoes',
+		'orderby' => 'name',
+		'order'   => 'ASC',
+		'hide_empty' => 0, /* mostrar todas */
+	);
+	$cats = get_categories($args);
+	foreach ($cats as $cat) {
+		if(isset($_POST[$cat->slug])) $alvos[] = $_POST[$cat->slug];
+	}	
 
 	$urlPublico = '';
 	$publico = '&instituicoes[]=';
@@ -180,9 +185,9 @@ function sm_pre_get_posts( $query ) {
 
     // add meta_query elements
     if( !empty( get_query_var( 'instituicoes' ) ) ){
-        $meta_query[] = array( 'key' => 'instituicoes', 'value' => get_query_var( 'instituicoes' ), 'compare' => 'LIKE' );
+        //$meta_query[] = array( 'key' => 'instituicoes', 'value' => get_query_var( 'instituicoes' ), 'compare' => 'LIKE' );
 		// possível correção
-		// $meta_query[] = array('key' => 'quem_fez_nome_unidade_vinculada', 'value' => get_query_var('instituicoes'), 'compare' => 'LIKE');
+		$meta_query[] = array('key' => 'quem_fez_nome_unidade_vinculada', 'value' => get_query_var('instituicoes'), 'compare' => 'LIKE');
     }
 
     if( !empty( get_query_var( 'abrangencia' ) ) ){
