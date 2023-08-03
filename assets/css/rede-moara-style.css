@@ -327,3 +327,10 @@
 .search-form input {
     appearance: auto;
 }
+
+/* Ajuste para página do post */
+.entry-content-rcc a {
+    font-size: 1rem;
+    line-height: 1.875rem;
+    color: #B17DCB;
+}
