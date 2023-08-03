@@ -434,6 +434,7 @@ function twenty_twenty_one_scripts() {
 	wp_enqueue_style ( 'rede-moara-class' );
 
 	wp_enqueue_script( 'dsgov-js', get_template_directory_uri() . '/assets/js/dsgov.js' , array('jquery'), $ver, true);
+
 	wp_enqueue_script( 'geral-js', get_template_directory_uri() . '/assets/js/geral.js' , array('jquery'), $ver);
 	wp_enqueue_script( 'geral-footer-js', get_template_directory_uri() . '/assets/js/geral-footer.js' , array('jquery'), $ver, true);
 	//Fim
@@ -1080,16 +1081,22 @@ function getNameRede($slugRede){
 
 function getCategoryNameRede($slugRede){
 	switch($slugRede){
-		case "rede-de-formacao":
-			return "formacao_categoria";
-		case "rede-de-inovacao":
-			return "inovacao_categoria";
-		case "rede-de-pesquisa":
-			return "pesquisa_categoria";
-		case "rede-de-produto":
-			return "produto_categoria";
-		case "rede-de-suporte":
-			return "suporte_categoria_nova";
+		case "rede-5":
+			return "rede_5_categoria";
+		case "rede-2":
+			return "rede_2_categoria";
+		case "rede-4":
+			return "rede_4_categoria";
+		case "rede-1":
+			return "rede_1_categoria";
+		case "rede-3":
+			return "rede_3_categoria";
+		case "rede-7":
+			return "rede_7_categoria";
+		case "rede-6":
+			return "rede_6_categoria";
+		case "rede-8":
+			return "rede_8_categoria";
 	}
 }
 
@@ -1108,6 +1115,6 @@ add_filter('wp_mail_smtp_custom_options', function( $phpmailer ) {
 	return $phpmailer;
 } );
 
-
+include 'busca_avancada.php';
 include 'criar_redes.php';
 include 'functions-rede-moara.php';

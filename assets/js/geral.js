@@ -106,3 +106,26 @@ function mouseOut() {
         card[i].style.visibility = "hidden";
     }
 }
+
+/**
+ * Função para carregar as categorias de acordo com a rede selecionada
+ */
+function carregaCategorias(val) {
+    document.getElementById('categorias-div').style.display = "inline";
+    //'rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'
+    //mostrar apenas o val e esconder os outros
+    document.getElementById('lista-rede-1').style.display = "none";
+    document.getElementById('lista-rede-2').style.display = "none";
+    document.getElementById('lista-rede-3').style.display = "none";
+    document.getElementById('lista-rede-4').style.display = "none";
+    document.getElementById('lista-rede-5').style.display = "none";
+    document.getElementById('lista-rede-6').style.display = "none";
+    document.getElementById('lista-rede-7').style.display = "none";
+    document.getElementById('lista-rede-8').style.display = "none";
+
+	if (val == 'todasRedes') {
+        document.getElementById('categorias-div').style.display = "none";
+    } else {
+		document.getElementById('lista-'+val).style.display = "inline"; 
+	}
+}

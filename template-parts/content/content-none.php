@@ -25,12 +25,35 @@
 				);
 				?>
 			</h1>
-
+			
 		<?php else : ?>
 
 			<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
 
 		<?php endif; ?>
+		<?php
+			if (!empty(get_query_var('post_types'))) {
+				$texto = '';
+				foreach (get_query_var('post_types') as $rede) {
+					$texto .= getNameRede($rede) . ', ';
+				}
+
+				echo '<p><strong>Pesquisa feita na(s) rede(s):</strong> ' . $texto . '</p>';
+			}
+			
+			if (!empty(get_query_var('publico'))) {
+				$texto = '';
+				foreach (get_query_var('publico') as $publico) {
+					$texto .= $publico . ', ';
+				}
+
+				if ($texto == '') {
+					$texto = get_query_var('publico');
+				}
+
+				echo '<p><strong>Pesquisa feita no(s) público(s):</strong> ' . $texto . '</p>';
+			}
+			?>
 	</header><!-- .page-header -->
 
 	<div class="page-content default-max-width">
