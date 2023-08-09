@@ -88,7 +88,20 @@
 						<?php endif; ?>
 						<?php if (get_sub_field('nome_unidade_vinculada')) : ?>
 							<li>
-								<strong>Unidade de pesquisa vinculada</strong>: <?php echo get_sub_field('site_unidade_vinculada') ? ('<a target="_blank" rel="noreferrer noopener" href="' . get_sub_field('site_unidade_vinculada') . '">' . get_sub_field('nome_unidade_vinculada') . '</a>') : get_sub_field('nome_unidade_vinculada'); ?>
+								<?php 
+									$link_unidade = get_sub_field('site_unidade_vinculada');
+
+									if ( $link_unidade && isset($link_unidade['url']) && isset($link_unidade['title']) ) {
+
+										// Se hover o atributo 'target', será um bool. Aqui convertemos para a notação do target do html  
+										$link_unidade_target = isset($link_unidade['target']) && $link_unidade['target'] ? '_blank' : '_self';
+
+										echo '<strong>Unidade de pesquisa vinculada</strong>: ' . '<a target="' . $link_unidade_target . '" rel="noreferrer noopener" href="' . esc_url($link_unidade['url']) . '">' . esc_attr($link_unidade['title']) . '</a>';
+										
+									} else {
+										echo '<strong>Unidade de pesquisa vinculada</strong>: ' . get_sub_field('nome_unidade_vinculada');
+									}
+								?>
 							</li>
 						<?php endif; ?>
 						<?php if (get_sub_field('projeto_vinculado')) : ?>
