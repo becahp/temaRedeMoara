@@ -109,6 +109,11 @@
 								<strong>Projeto vinculado</strong>: <?php the_sub_field('projeto_vinculado'); ?>
 							</li>
 						<?php endif; ?>
+						<?php if (get_sub_field('quem_financiou')) : ?>
+							<li>
+								<strong>Quem financiou</strong>: <?php the_sub_field('quem_financiou'); ?>
+							</li>
+						<?php endif; ?>
 						<?php if (get_sub_field('coordenacao_projeto')) : ?>
 							<li>
 								<strong>Coordenação do projeto</strong>: <?php the_sub_field('coordenacao_projeto'); ?>
