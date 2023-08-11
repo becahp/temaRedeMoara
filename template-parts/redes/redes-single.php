@@ -88,30 +88,39 @@
 						<?php endif; ?>
 						<?php if (get_sub_field('nome_unidade_vinculada')) : ?>
 							<li>
-								<?php 
-									$link_unidade = get_sub_field('site_unidade_vinculada');
+								<?php
+								$link_unidade = get_sub_field('site_unidade_vinculada');
 
-									if ( $link_unidade && isset($link_unidade['url']) && isset($link_unidade['title']) ) {
-
-										// Se hover o atributo 'target', será um bool. Aqui convertemos para a notação do target do html  
-										$link_unidade_target = isset($link_unidade['target']) && $link_unidade['target'] ? '_blank' : '_self';
-
-										echo '<strong>Unidade de pesquisa vinculada</strong>: ' . '<a target="' . $link_unidade_target . '" rel="noreferrer noopener" href="' . esc_url($link_unidade['url']) . '">' . esc_attr($link_unidade['title']) . '</a>';
-										
-									} else {
-										echo '<strong>Unidade de pesquisa vinculada</strong>: ' . get_sub_field('nome_unidade_vinculada');
-									}
+								if ($link_unidade && isset($link_unidade['url']) && isset($link_unidade['title'])) {
+									// Se hover o atributo 'target', será um bool. Aqui convertemos para a notação do target do html  
+									$link_unidade_target = isset($link_unidade['target']) && $link_unidade['target'] ? '_blank' : '_self';
+									echo '<strong>Unidade de pesquisa vinculada</strong>: ' . '<a target="' . $link_unidade_target . '" rel="noreferrer noopener" href="' . esc_url($link_unidade['url']) . '">' . esc_attr($link_unidade['title']) . '</a>';
+								} else {
+									echo '<strong>Unidade de pesquisa vinculada</strong>: ' . get_sub_field('nome_unidade_vinculada');
+								}
 								?>
+							</li>
+						<?php endif; ?>
+
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</ol>
+
+			<h2>Quem financiou?</h2>
+			<ol>
+				<?php if (have_rows('quem_financiou')) : ?>
+					<?php while (have_rows('quem_financiou')) :
+						the_row();
+
+						if (get_sub_field('agencia_fomento')) : ?>
+							<li>
+								<strong>Agência de fomento</strong>: <?php the_sub_field('agencia_fomento'); ?>
 							</li>
 						<?php endif; ?>
 						<?php if (get_sub_field('projeto_vinculado')) : ?>
 							<li>
-								<strong>Projeto vinculado</strong>: <?php the_sub_field('projeto_vinculado'); ?>
-							</li>
-						<?php endif; ?>
-						<?php if (get_sub_field('quem_financiou')) : ?>
-							<li>
-								<strong>Quem financiou</strong>: <?php the_sub_field('quem_financiou'); ?>
+								<strong>Nome do projeto</strong>: <?php the_sub_field('projeto_vinculado'); ?>
 							</li>
 						<?php endif; ?>
 						<?php if (get_sub_field('coordenacao_projeto')) : ?>
@@ -119,7 +128,6 @@
 								<strong>Coordenação do projeto</strong>: <?php the_sub_field('coordenacao_projeto'); ?>
 							</li>
 						<?php endif; ?>
-
 					<?php endwhile; ?>
 				<?php endif; ?>
 			</ol>
@@ -130,7 +138,7 @@
 					<?php while (have_rows('como_usar')) :
 
 						the_row();
-						
+
 						if (get_sub_field('funcionalidades')) : ?>
 							<li>
 								<strong>Funcionalidades</strong>: <?php the_sub_field('funcionalidades'); ?>
