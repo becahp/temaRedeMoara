@@ -35,7 +35,7 @@
       <div class="container-lg">
         <div class="header-top">
           <div class="header-logo"><img src="<?php echo (esc_url(get_template_directory_uri()) . '/assets/images/govbr-logo-large.png') ?>" alt="logo" />
-            <div class="header-sign">Ministério da Ciência, Tecnologia e Inovações</div>
+            <div class="header-sign">Ministério da Ciência, Tecnologia e Inovação</div>
           </div>
           <div class="header-actions">
             <div class="header-links dropdown">
