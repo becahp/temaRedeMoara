@@ -1051,12 +1051,23 @@ function query_post_type($query) {
         $post_type = $post_type;
 	}
     else {
-        $post_type = array('post','rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'); // replace cpt to your custom post type
+        $post_type = array('rede-1','rede-2','rede-3','rede-4','rede-5','rede-6','rede-7','rede-8'); // replace cpt to your custom post type
 	}
     $query->set('post_type',$post_type);
     return $query;
     }
 }
+
+
+function exclude_posts_and_pages_from_search($query)
+{
+	if ($query->is_search && !is_admin()) {
+		$query->set('post_type', array('rede-1', 'rede-2', 'rede-3', 'rede-4', 'rede-5', 'rede-6', 'rede-7', 'rede-8'));
+	}
+	return $query;
+}
+add_filter('pre_get_posts', 'exclude_posts_and_pages_from_search');
+
 
 function getNameRede($slugRede){
 	switch($slugRede){
