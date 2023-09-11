@@ -14,7 +14,7 @@ function busca_avancada_redes()
 	$form = "<form method=\"post\" id=\"formBuscaAvancada\" class=\"search-form\" action=\"" . esc_url(admin_url('admin-post.php')) . "\" enctype=\"multipart/form-data\">";
 	$form .= "<div class=\"header-search\"><div class=\"br-input has-icon\">";
 	$form .= "<label for=\"search-form-3\">Pesquisa Avançada:</label>";
-	$form .= "<input class=\"has-icon\" id=\"search-form-3\" type=\"search\" placeholder=\"O que você procura?\" value=\"\" name=\"termoPesquisa\" data-swplive=\"true\">";
+	$form .= "<input class=\"has-icon\" id=\"search-form-3\" type=\"search\" placeholder=\"O que você procura?\" value=\"\" name=\"s\">";
 	$form .= "<button class=\"br-button circle small\" form=\"formBuscaAvancada\" type=\"submit\" aria-label=\"Pesquisar\" \"><i class=\"fas fa-search\" aria-hidden=\"true\"></i></button>";
 	#$form .= "<button class=\"br-button circle search-close\" type=\"button\" aria-label=\"Fechar Busca\" data-dismiss=\"search\"><i class=\"fas fa-times\" aria-hidden=\"true\"></i></button>";
 	$form .= "</div></div></form>";
@@ -62,6 +62,7 @@ function busca_avancada_redes()
 			. '<label for="todasCat">Todas as classificações</label>'
 			. '</div>'
 			. '</div>';
+		
 		$rede = getCategoryNameRede($post_type);
 		$args = array(
 			'taxonomy' => $rede,
@@ -70,6 +71,7 @@ function busca_avancada_redes()
 			'hide_empty' => 0, /* mostrar todas */
 		);
 		$cats = get_categories($args);
+		
 		foreach ($cats as $cat) {
 			$additional_fields[] = '<div class="br-item divider" tabindex="-1">'
 				. '<div class="br-radio">'
@@ -135,7 +137,7 @@ function buscaAvancadaAction() {
 	}
 
 	// Insere um termo de pesquisa. ex: "cnpq"
-	if(isset($_POST['termoPesquisa'])) $termoPesquisa = ($_POST['termoPesquisa']); else $termoPesquisa = "";
+	if(isset($_POST['s'])) $termoPesquisa = ($_POST['s']); else $termoPesquisa = "";
 	
 	// escolhe uma rede específica. ex: rede de suporte
 	if(isset($_POST['post_types'])) $rede = ($_POST['post_types']); else $rede = "";
@@ -203,3 +205,29 @@ function sm_pre_get_posts( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'sm_pre_get_posts', 1 );
+
+add_shortcode('shortcode_form_pesquisa_relevanssi', 'form_pesquisa_relevanssi');
+function form_pesquisa_relevanssi(){
+	
+	$form = "<form role=\"search\" method=\"get\" class=\"search-form\" action=\"/\">";
+	$form .= "<label>";
+	$form .= "<span class=\"screen-reader-text\">Search for:</span>";
+	$form .= "<input type=\"search\" class=\"search-field\" placeholder=\"Search …\" name=\"s\" data-rlvlive=\"true\" data-rlvconfig=\"default\">";
+	//data-rlvparentel=\"#rlvlive\" 
+	$form .= "</label>";
+	$form .= "<input type=\"submit\" class=\"search-submit\" value=\"Search\">";
+	// $form .= "<div id=\"rlvlive\"></div>";
+	$form .= "</form>";
+	
+	return $form;
+}
+
+function custom_relevanssi_live_search_query_args($args)
+{
+	$args['post_type'] = array('rede-1', 'rede-2', 'rede-3', 'rede-4', 'rede-5', 'rede-6', 'rede-7', 'rede-8');
+
+	return $args;
+}
+
+// add_filter('relevanssi_live_search_query_args', 'custom_relevanssi_live_search_query_args');
+// add_filter( 'relevanssi_live_search_add_result_div', '__return_false' );
