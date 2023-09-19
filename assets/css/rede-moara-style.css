@@ -337,10 +337,57 @@
     color: #B17DCB;
 }
 
-.breadcrumb-post a, .breadcrumb-post i {
+.breadcrumb-post a,
+.breadcrumb-post i {
     color: #B17DCB !important;
 }
 
 .cat-links-moara a {
     color: #B17DCB;
+}
+
+/* Busca live */
+.busca-live-wrapper {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.busca-live-form__container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.busca-live-form__input {
+    padding: 12px 50px;
+    transition: all .5s;
+    box-sizing: border-box;
+    outline: none;
+    flex-basis: 100%;
+    border: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    flex-grow: 1;
+}
+
+.busca-live-submit {
+    min-width: 3%;
+    position: relative;
+    background-color: white;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.busca-live-wrapper button {
+    border: none;
+    border-radius: 0;
+    padding: 0;
 }

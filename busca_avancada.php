@@ -2,7 +2,6 @@
 
 // Shortcode principal da busca
 add_shortcode('shortcode_busca_avancada', 'busca_avancada_redes');
-
 function busca_avancada_redes()
 {
 	//post types permitidos
@@ -25,7 +24,7 @@ function busca_avancada_redes()
 	$additional_fields = array();
 	if (is_array($post_types)) {
 		$post_type_objects   = get_post_types(array(), 'objects');
-		$additional_fields[] = '<div class="post_types"><strong>Selecione a Área de Conhecimento:</strong> ';
+		$additional_fields[] = '<div class="post_types mt-1"><strong>Selecione a Área de Conhecimento:</strong> ';
 
 		$additional_fields[] = '<div class="ml-5"><span class="post_type">'
 			. '<input type="radio" id="todasRedes" name="post_types" value="todasRedes" checked="checked" onclick=" carregaCategorias(this.value)"/>'
@@ -104,6 +103,8 @@ function busca_avancada_redes()
 	}
 	// --------------------
 	$additional_fields[] = '</div></div></div>';
+	// Adicionando botão para facilitar a busca
+	$additional_fields[] =  "<div class=\"d-flex justify-content-center\"><button class=\"br-button primary small mt-1\" form=\"formBuscaAvancada\" type=\"submit\" aria-label=\"Pesquisar\" \">Buscar</button></div>";
 
 	$form = str_replace('</form>', implode("\n", $additional_fields) . '</form>', $form);
 
@@ -208,19 +209,36 @@ add_action( 'pre_get_posts', 'sm_pre_get_posts', 1 );
 
 add_shortcode('shortcode_form_pesquisa_relevanssi', 'form_pesquisa_relevanssi');
 function form_pesquisa_relevanssi(){
-	
-	$form = "<form role=\"search\" method=\"get\" class=\"search-form\" action=\"/\">";
-	$form .= "<label>";
-	$form .= "<span class=\"screen-reader-text\">Search for:</span>";
-	$form .= "<input type=\"search\" class=\"search-field\" placeholder=\"Search …\" name=\"s\" data-rlvlive=\"true\" data-rlvconfig=\"default\">";
-	//data-rlvparentel=\"#rlvlive\" 
-	$form .= "</label>";
-	$form .= "<input type=\"submit\" class=\"search-submit\" value=\"Search\">";
-	// $form .= "<div id=\"rlvlive\"></div>";
+
+
+
+	$form = "<form class=\"busca-live-wrapper\" role=\"search\" action=\"/\" method=\"get\">";
+	$form .= "<div class=\"busca-live-form__container \" role=\"tablist\">";
+	$form .= "<input placeholder=\"O que você procura?\" class=\"busca-live-form__input\" type=\"search\" name=\"s\" title=\"Search\" value=\"\" data-rlvlive=\"true\" data-rlvconfig=\"default\">";
+	// $form .= "<button id=\"clear-with-button\" type=\"reset\">";
+	// $form .= "<i class=\"fas fa-times\" aria-hidden=\"true\"></i>";
+	// $form .= "</button>";
+	$form .= "<button class=\"busca-live-submit\" type=\"submit\">";
+	$form .= "<i class=\"fas fa-search\" aria-hidden=\"true\"></i>";
+	$form .= "</button>";
+	$form .= "</div>";
 	$form .= "</form>";
+
+	// $form = "<form role=\"search\" method=\"get\" class=\"search-form\" action=\"/\">";
+	// $form .= "<label>";
+	// $form .= "<span class=\"screen-reader-text\">Search for:</span>";
+	// $form .= "<input type=\"search\" class=\"search-field\" placeholder=\"Search …\" name=\"s\" data-rlvlive=\"true\" data-rlvconfig=\"default\">";
+	// //data-rlvparentel=\"#rlvlive\" 
+	// $form .= "</label>";
+	// $form .= "<input type=\"submit\" class=\"search-submit\" value=\"Search\">";
+	// // $form .= "<div id=\"rlvlive\"></div>";
+	// $form .= "</form>";
 	
 	return $form;
 }
+
+add_action( 'admin_ajax_nopriv_relevanssi_live_search', 'relevanssi_live_search' );
+add_action( 'admin_ajax_relevanssi_live_search', 'relevanssi_live_search' );
 
 function custom_relevanssi_live_search_query_args($args)
 {
@@ -229,5 +247,5 @@ function custom_relevanssi_live_search_query_args($args)
 	return $args;
 }
 
-// add_filter('relevanssi_live_search_query_args', 'custom_relevanssi_live_search_query_args');
+add_filter('relevanssi_live_search_query_args', 'custom_relevanssi_live_search_query_args');
 // add_filter( 'relevanssi_live_search_add_result_div', '__return_false' );
