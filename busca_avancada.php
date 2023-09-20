@@ -104,7 +104,7 @@ function busca_avancada_redes()
 	// --------------------
 	$additional_fields[] = '</div></div></div>';
 	// Adicionando botão para facilitar a busca
-	$additional_fields[] =  "<div class=\"d-flex justify-content-center\"><button class=\"br-button primary small mt-1\" form=\"formBuscaAvancada\" type=\"submit\" aria-label=\"Pesquisar\" \">Buscar</button></div>";
+	$additional_fields[] =  "<div class=\"d-flex justify-content-center\"><button class=\"br-button primary small mt-1 botao-busca-avancada\" form=\"formBuscaAvancada\" type=\"submit\" aria-label=\"Pesquisar\" \">Buscar</button></div>";
 
 	$form = str_replace('</form>', implode("\n", $additional_fields) . '</form>', $form);
 

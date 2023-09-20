@@ -330,6 +330,18 @@
     appearance: auto;
 }
 
+#formBuscaAvancada i {
+    color: #B17DCB;
+}
+
+#formBuscaAvancada input[type='radio'] {
+    accent-color: #B17DCB;
+}
+
+.botao-busca-avancada {
+    background-color: #B17DCB !important;
+}
+
 /* Ajuste para página do post */
 .entry-content-rcc a {
     font-size: 1rem;
