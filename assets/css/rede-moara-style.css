@@ -389,6 +389,13 @@
     flex-grow: 1;
 }
 
+/* A lupa deve aparecer em telas menores */
+@media screen and (max-width: 400px) {
+    .busca-live-form__input {
+        padding: 12px 15px;
+    }
+}
+
 .busca-live-submit {
     min-width: 3%;
     position: relative;
