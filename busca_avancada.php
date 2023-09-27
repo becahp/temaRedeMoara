@@ -214,7 +214,9 @@ function form_pesquisa_relevanssi(){
 
 	$form = "<form class=\"busca-live-wrapper\" role=\"search\" action=\"/\" method=\"get\">";
 	$form .= "<div class=\"busca-live-form__container \" role=\"tablist\">";
-	$form .= "<input placeholder=\"O que você procura?\" class=\"busca-live-form__input\" type=\"search\" name=\"s\" title=\"Search\" value=\"\" data-rlvlive=\"true\" data-rlvconfig=\"default\">";
+	// removi isso aqui pq o PPA barra
+	// data-rlvlive=\"true\" data-rlvconfig=\"default\"
+	$form .= "<input placeholder=\"O que você procura?\" class=\"busca-live-form__input\" type=\"search\" name=\"s\" title=\"Search\" value=\"\">";
 	// $form .= "<button id=\"clear-with-button\" type=\"reset\">";
 	// $form .= "<i class=\"fas fa-times\" aria-hidden=\"true\"></i>";
 	// $form .= "</button>";

@@ -340,6 +340,8 @@
 
 .botao-busca-avancada {
     background-color: #B17DCB !important;
+    padding-inline: 35%;
+    padding-block: 20px;
 }
 
 /* Ajuste para página do post */
@@ -396,6 +398,7 @@
     border-bottom-right-radius: 8px;
     padding: 10px;
     cursor: pointer;
+    margin-right: 25px;
 }
 
 .busca-live-wrapper button {
